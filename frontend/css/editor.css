@@ -1,0 +1,249 @@
+.navbar-default .navbar-nav > li > a{
+    color: #063145;
+}
+
+
+
+.navbar-default .navbar-nav > li > a:hover{
+  color: #FF9900;
+}
+
+
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #063145;
+  background-color: #FFFFFF;
+  text-decoration: underline;
+}
+
+select {
+    border: 0px solid #00B8B8;
+    /* border-radius: 10px; */
+    padding: 3px;
+}
+
+ul.textboxlist-bits{
+    margin: 5px;
+    border: 1.5px solid #00B8B8;
+    border-radius: 5px;
+}
+
+
+select option:hover,
+    select option:focus,
+    select option:active {
+        background-color: rgb(128, 204, 204) !important; /* for IE */
+
+    }
+
+
+.navbar-default{
+   margin-top:0px;
+   margin-bottom: 0px;
+   margin-left:0px;
+   padding-bottom:0px;
+   border:none;
+}
+
+
+.btn-primary > a:link {
+   background-color: #063145;
+}
+
+.btn-primary{
+   background-color: #063145;
+}
+
+.btn-primary:hover{
+   background-color: #006B6B;
+}
+
+.btn-primary > a:hover {
+   background-color: #006B6B;
+}
+
+body.modal-open{
+    overflow: visible;
+}
+
+#sideBar::-webkit-scrollbar {
+    display: none;
+}
+
+a.button {
+  padding: 10px 10px 13px 13px;
+  border-radius: 100%;
+  background-color: #007fed;
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  top: auto;
+  left: auto;
+  transition: transform 0.25s;
+}
+a.button:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+
+a.button.active {
+  transform: rotate(135deg);
+  transition: transform 0.5s;
+  color: #fff;
+}
+
+a.button:visited {
+  text-decoration: none;
+  color: #fff;
+  background-color: #000;
+}
+
+
+a.button.active:hover {
+  color: #000;
+}
+
+
+.wrap {
+  width: 600px;
+  height: auto;
+  position: absolute;
+  overflow: hidden;
+  top: 20%;
+  right: 10%;
+  left: 30%;
+  padding: 20px 40px 40px 40px;
+  display: block;
+  border-radius: 4px;
+  transform: translateY(20px);
+  transition: all 0.5s;
+  visibility: hidden;
+}
+.wrap .content {
+  opacity: 0;
+}
+.wrap:before {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: #E5FFFF;
+  content: "";
+  bottom: 10px;
+  left: 50%;
+  top: 95%;
+  color: #fff;
+  border-radius: 100%;
+  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrap.active {
+  opacity: 0.9;
+  display: block;
+  visibility: visible;
+  box-shadow: 2px 3px 16px #006666;
+  transition: all 600ms;
+  transform: translateY(0px);
+  transition: all 0.5s;
+}
+.wrap.active:before {
+  height: 2000px;
+  width: 2000px;
+  border-radius: 50%;
+  top: 100%;
+  left: 50%;
+  margin-left: -1000px;
+  margin-top: -1000px;
+  display: block;
+  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrap.active .content {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+
+#wrap1:before{
+background: #00B8B8; //#FFB84D;//FF8B6F;//FFFFB3
+}
+
+#wrap1.active{
+  box-shadow: 2px 3px 3px #00A4A4;
+  left: 0px;
+  border-radius: 0px;
+  top: 0px;
+  width: 95%;
+  height: 533px;
+  overflow-y: hidden;
+  opacity: 1.0;
+}
+
+#wrap2:before{
+background: #E5FFFF;
+}
+
+#wrap2.active{
+  box-shadow: 2px 3px 16px 009999;
+}
+
+
+
+#wrap3:before{
+background: #E5FFFF;
+}
+
+#wrap3.active{
+  box-shadow: 2px 3px 16px #009999;
+  top: 265px;
+}
+
+
+#wrap4:before{
+background: #FFE0B3;
+}
+
+#wrap4.active{
+  box-shadow: 2px 3px 16px #FF9900;
+  top: 350px;
+}
+
+
+
+#wrap5:before{
+background: #E5FFFF;
+}
+
+#wrap5.active{
+  box-shadow: 2px 3px 16px #009999;
+  top: 320px;
+}
+
+
+
+/*#possible-actions-div:hover{
+    background-color: #006EA1 !important;
+}
+
+
+#possible-actions-div:hover ~ #possible-actions-plus{
+    background-color: #006EA1 !important;
+}
+
+
+#possible-actions-div:hover ~ #possible-actions{
+    background-color: #006EA1 !important;
+}*/
+
+/*#wrap5:before{
+background: #FCF5F5;
+}
+
+#wrap5.active{
+  box-shadow: 2px 3px 16px #CC4040;
+  top: 360px;
+}*/

@@ -1,0 +1,205 @@
+
+function nodeNameText(selected_node, context){
+  if(context == 1){
+    $("#modal-text").empty();
+    $('#modal-text').append("<h4>Instructions</h4>"+
+                        "<ul>"+
+                          "<li>Click on 'X' to delete the newly added node.</li>"+
+                          "<li>Select a domain value from the <b>Domain</b> dropdown box, followed by a type from the Type dropdown box.</li>"+
+                          "<li>Select an exact entity as the node label from the <b>Entity</b> dropdown box (optional).</li>"+
+                          "<li>Click the Save button to apply the selected node label.</li>"+
+                        "</ul>");
+  }else if(context == 2){
+    $('#modal-text').append("<h4>Instructions</h4>"+
+                        "<ul>"+
+                          "<li>click 'x' to delete the created node.</li>"+
+                          "<li>click 'save changes' to exit the window.</li>"+
+                        "</ul>");
+  }else if(context == 3){
+    $('#modal-text').append("<h4>Instructions</h4>"+
+                        "<ul>"+
+                          "<li>Edge labels are ranked by their relevance in the <b>Edge Label</b> dropdown box. Choose the appropriate label to use from the list.</li>"+
+                          "<li>Click the Save button to apply the selected edge label.</li>"+
+                        "</ul>");
+  }
+  $("#show-instructions").attr("disabled", true);
+}
+
+
+$("#save-changes").click(function(){
+ $("#modal-text").empty();
+ if (selected_node && newNode) {
+    var text1 = $("#domain-options option:selected").text();
+    var text2 = $("#type-options option:selected").text();
+    if (text1 != "Select Domain..." &&  text2 != "Select Type..."){
+      $("#myModal").modal('hide');
+      selected_node = null;
+      $("#show-instructions").attr("disabled", false);
+      newNode = false;
+      // $("#modal-text").empty();
+      restart();
+      animatedHelp();
+      suggestionCounter = 0;
+      if(nodes.length == 1) {
+         addSuggestions(1); 
+      };
+    }else{
+      $("#modal-text").append("<p>Please Select both Domain and type to continue</p>");
+    }
+  }else{
+    var text = $("#edge-options option:selected").text();
+    if (text == "Select edge") {
+      $("#modal-text").append("<p>Please Select both Domain and type to continue</p>");
+    }else{
+      $("#myModal").modal('hide');
+      addSuggestions(0);
+    $("#linkId_"+selected_link.id).css('stroke', 'black');
+    selected_link = null;
+  selected_node = null;
+  $("#show-instructions").attr("disabled", false);
+  newNode = false;
+  // $("#modal-text").empty();
+  restart();
+  animatedHelp();
+  suggestionCounter = 0;
+    }
+    // $("#myModal").modal('hide');
+  }
+  /*selected_node = null;
+  if (selected_link) {
+    $("#linkId_"+selected_link.id).css('stroke', 'black');
+    selected_link = null;
+  };*/
+
+      restart();
+      animatedHelp();
+});
+
+function nodeExists(nodeID){
+  for (var i = 0; i < nodes.length; i++) {
+    if (nodeID == nodes[i].nodeID) {
+      return nodes[i];
+    };
+  };
+  return null;
+}
+
+function getRequest(URL, data, container){
+  var returnVar = [];
+  jQuery.ajax({
+      type:"GET",
+      beforeSend: function (request)
+      {
+          request.setRequestHeader("Content-type", "application/json");
+          // request.setRequestHeader("Access-Control-Request-Method","GET");
+          // request.setRequestHeader("Access-Control-Request-Headers","access-control-allow-origin, accept, content-type");
+      },
+      url: URL,
+      processData: false,
+      dataType: "json",
+      async:   false,
+      success: function(data) {
+          types = [];
+          for (var i = 0; i < data.length; i++) {
+            var temp = data[i].split("|");
+            container[i] = temp;
+          };
+
+      },
+      error: function(){
+          container.length = 0;
+          data = ["123|Select Name", "234|Domain1", "4345|Domain2", "141|domain3", "3455|Domain4", "2134|Domain5", "7575|Domain6", "7575s|Domain7", "73275|Domain8", "75115|Domain9"];
+          for (var i = 0; i < data.length; i++) {
+            var temp = data[i].split("|");
+            container[i] = temp;
+          }
+      }
+    });
+}
+
+function addTypes(types){
+  var value = $("#domain-options option:selected").val();
+  getRequest("http://[server_name]:8080/gettypes?name="+value, value,types);
+  $("#type-options").prop('disabled', false);
+  $("#type-options").empty();
+  for (var i = 0; i < types.length; i++) {
+    $("#type-options").append('<option value="'+types[i][0]+'" id="entity-value-1">'+types[i][1]+'</option>');
+  };
+
+  $("#type-div").show();
+}
+
+
+function displayDomainOptions(domain){
+  jQuery("#edge-div").hide();
+  $("#type-div").hide();
+  $("#entity-div").hide();
+  $("#domain-div").show();
+  $("#type-options").empty();
+  $("#domain-options").empty();
+  for (var i = 0; i < domain.length; i++) {
+    $("#domain-options").append('<option value="'+domain[i][0]+'" id="add-value-1" >'+domain[i][1]+'</option>');
+  };
+        
+}
+
+function checkConnected(nodes, links){
+  if (nodes.length == 1 || nodes.length == 0) {
+    return false;
+  };
+  /*if (nodes.length == 0) {
+    return false;
+  };
+  if (nodes.length == 1) {
+    return true;
+  };*/
+
+  if (nodes.length == 2 && links.length == 0) {
+    return true;
+  };
+  checkedNodes = [];
+
+  var nodeFound = false;
+
+  for (var i = 0; i < nodes.length; i++) {
+    for (var j = 0; j < links.length; j++) {
+      var link = links[j];
+      if (link.source != link.target) 
+        if (nodes[i] == link.source || nodes[i] == link.target) {
+          nodeFound = true;
+        };
+    };
+    if (!nodeFound) {
+      return true;
+    }else{
+      nodeFound = false;
+    }
+  };
+
+
+  return false;
+
+
+
+  // for (ele in links){
+  // for (var i = 0; i < links.length; i++) {
+  //   var ele = links[i]; 
+  //   if (ele.source != ele.target) {
+  //     var exist1 = nodes.indexOf(ele.source);
+  //     var exist2 = nodes.indexOf(ele.target);
+  //     if (exist1 < 0) {
+  //       checkedNodes[checkedNodes.length] = ele.source.nodeID;
+  //     }
+  //     if (exist2 < 0) {
+  //       checkedNodes[checkedNodes.length] = ele.target.nodeID; 
+  //     }
+  //   }
+  // }
+
+  // if (checkedNodes.length==0) {
+  //   return false;
+  // }else{
+  //   return true;
+  // }
+}
+

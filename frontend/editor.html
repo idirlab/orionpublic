@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Orion</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+			<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link rel="stylesheet" href="css/editor.css">
+	<link rel="stylesheet" href="css/free.min.css">
+	<link rel="stylesheet" href="css/survey.css">
+
+
+	<!-- required stylesheet for TextboxList -->
+		<link rel="stylesheet" href="css/TextboxList.css" type="text/css" media="screen" charset="utf-8" />
+	<!-- required stylesheet for TextboxList.Autocomplete -->
+	 <link rel="stylesheet" href="css/TextboxList.Autocomplete.css" type="text/css" media="screen" charset="utf-8" />
+
+	</head>
+
+	<body style="background-color: white; max-width:100vw;">
+ <!-- <body style="background-color: #000;">-->
+	<div class="container-fluid" id="container-div" style="margin-top:5px; margin-left:0px;">
+
+		<div class=" jumbotron-padding all-round-margins" style="text-align: left; padding-top: 0px; padding-bottom: 0px; background-color: #FFFFFF;">
+
+
+		<div class="row ">
+
+			<div class="col-md-9">
+			 <nav class="navbar navbar-default" role="navigation" style="background-color:#FFFFFF; margin-left: 50px; font-size: 20px;">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						 <a class="navbar-brand" href="#" style="font-size: 30px; color: #063145; font-family: Florence;"><img class="img-responsive" src="images/Header-logo.png" alt="Orion" width="75px" height="75px" style="position: absolute; z-index:1;"></a>  <!-- Edited by AD -->
+
+					</div>
+
+				</nav>
+			</div>
+
+	 <div class="col-md-3">       <nav class="navbar navbar-default" role="navigation" style="background-color:#FFFFFF; margin-left: 50px; font-size: 20px;">
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+						<ul class="nav navbar-nav"><style>
+									 a:link    {background-color:#FFFFFF; text-decoration:none}</style>
+												 <li class="active"><a href="index.html"><img class="img-responsive" src="images/Home-icon.png" alt="Home" style="padding-left: 25px;"></a></li>
+												<li><a href="editor.html"><img class="img-responsive" src="images/Editor-icon.png" alt="Editor" style="padding-left: 25px;"><img class=
+"img-responsive" src="images/Top-navigation-selection_1.png" alt=""></a></li>
+
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</nav>
+				</div>
+
+
+		</div> <!-- row -->
+
+
+
+
+
+		</div>
+
+<div class="col-md-12" style="height: 21px;background-color:#063145;"></div>
+		<div class="col-md-12 border container-fluid all-round-margins" id="app-body" style=" margin-bottom: 1px; margin-left: 0px; padding-left: 15px;" >
+
+		</div>
+		</div>
+
+		<div style="text-align:center;margin-left:200px;">
+<div class="row" style="display: flex;">
+<div class="menu-border" style=" height:50px;border-right:solid gray 1px;padding:5px;padding-right:15px;padding-left:15px;">
+<h4 style="float: left;font-family: Segoe UI; padding-right:5px;">Locked Mode</h4>
+<label class="switch">
+	<input id="switch-button" type="checkbox">
+	<span id="rearrange-button" class="slider round"></span>
+</label>
+<h4 style="float: right;font-family: Segoe UI;padding-left:5px; ">Rearrange Mode</h4>
+</div>
+<!-- Edited by AD -->
+<!-- 	 <div style="margin-left:10px;"> -->
+
+		 <div hidden class="menu-border" id="settings-div" style="height:50px;border-right:solid gray 1px;padding:5px;padding-right:15px;padding-left:15px; text-align: center;  cursor: pointer;">
+
+			<h4 style="font-family: Segoe UI;float:left;padding-right:5px;">Show </h4>
+		<select class="form-control wrapper" id="suggestion-options" style="display: inline;width:40px;padding: 0px;">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option selected="selected" value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+				</select>
+				<h4 style="font-family: Segoe UI; float:right;padding-left:5px;"> Suggestions</h4>
+			</div>
+
+<!-- 	</div> -->
+
+
+
+	<div class="inactive" id="submit-button" style="display:none; padding:5px; padding-right:15px;padding-left:15px;height:50px;border-right:solid gray 1px; text-align: center; cursor: pointer;">
+<!-- 					 <a href="https://docs.google.com/forms/d/1gFr7Qko2NOsKZ-PT_4fEFOY-kYXbZOiguaiYqekWko0/viewform" target="_blank"> -->
+<!-- 		<a href="#surveyModal" class="survey_Modal" data-toggle="modal" data-target=".bs-example-modal-lg"> -->
+
+	 <h4 style="font-family: Segoe UI;">Submit</h4></a>
+
+<!-- 		</a> -->
+	 </div>
+
+	 <div class="inactive" id="undo-button" style="height:50px; text-align: center; padding:5px;cursor: pointer; border-right:solid gray 1px;padding-right:15px;padding-left:15px;">
+<!--      <i class="material-icons" style="font-size:39px;border-color: black;">backspace</i> -->
+		 <i class="material-icons" id="undo-icon" style="font-size:39px;border-color: black;">undo</i>
+		<h4 id="undo-text" style="float: right;font-family: Segoe UI;  padding-left:5px; ">Undo</h4></div>
+
+		<div class="menu-border" id="clear-button" style="height:50px; text-align: center; padding:5px;cursor: pointer; padding-right:15px;padding-left:15px;">
+	 <i class="material-icons" style="font-size:39px;border-color: black;">backspace</i>
+	 <h4 style="float: right;font-family: Segoe UI;  padding-left:5px; ">Clear Canvas</h4></div>
+
+
+
+	<div hidden class="inactive" id="button-g" style="height:50px;border-left:solid gray 1px; text-align: center; padding:5px;cursor: pointer; padding-right:15px;padding-left:15px;">
+	 <i class="material-icons" style="border-color: black;font-size:39px;">lightbulb</i>
+	 <h4 style="font-family: Segoe UI; float:right; padding-left:5px;">Suggest Different Edges</h4></div>
+
+
+</div>
+	 </div>
+</div>
+
+<div hidden id="query-box" style="position:absolute;margin-top:125px;right: 50px;border-radius: 15px;width: 250px;float: left;background-color:#ffe0a7;padding:10px;">
+	<h4 id="query-header"></h4>
+	<p id="query-desc" style="text-align: left;"></p>
+</div>
+
+<div class="panel graph" id="svg-div" style="margin: 0px; border-radius: 0px;">
+
+
+<div class='wrap' id="wrap5" >
+	<div class='content'>
+				<p style=" display: inline; padding-left: 35px; font-family: Segoe UI; font-size: 15px; margin-top: 60px; margin-left: 90px;">Are you sure you want to clear the canvas?</p><br>
+					<button type="button" class="btn btn-primary" id="clear-graph" style="width: 75px; margin-top: 20px; margin-left: 180px; margin-right: 15px;">Clear</button>
+					<button type="button" class="btn btn-primary" id="cancel-clear" style="width: 75px; margin-top: 20px;">Cancel</button>
+	</div>
+</div>
+
+
+
+<!-- final code here  -->
+
+<!-- Large modal -->
+
+
+<div class="modal fade bs-example-modal-lg" id="FinalSurveyForm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" data-keyboard="false" data-backdrop="static"><!--closing termsCondition-->
+	<div class="modal-dialog modal-lg">
+	<div class="modal-content">
+
+		<div class="modal-header modalHeader">
+<!-- 			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+			<h4 class="modal-title" id="myModalLabel">SURVEY FORM</h4>
+		</div>
+
+		<div class="modal-body">
+			<!-- Form Starts here -->
+			<script type="text/javascript">var submitted=false;</script>
+			<iframe name="hidden_iframe_" id="hidden_iframe_"
+			style="display:none;" onload="onFinalFormSubmit()"></iframe>
+
+			<div style=" text-align:center;"><h3>You have submitted all queries! Now there is a post-study survey.</h3></div>
+
+
+				<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeINXSiNu2g9uyr5RGT1dzhJYHZWjUNeF7PdAlIvw8lubaPqg/formResponse" method="POST" id="ss-form" target="hidden_iframe_" autocomplete="on" onsubmit="submitted=true;" ><ol role="list" class="ss-question-list" style="padding-left: 0;">
+			<!-- For first Field	 -->
+				<!-- for the second field -->
+
+
+
+				<div id="slide">
+				<div  >
+						<h4 class="headP">Please answer the questions below</h4>
+				</div></div>
+				<!-- Form to be filled as  the user has accepted the request -->
+
+
+
+
+
+				<div   style="position:relative;">
+
+						<!-- Input 1 - Text Box  -->
+
+					<!-- This will be first Multiple Choice Question with Radio Buttons-->
+					<div class="feedbackQuestion" >
+
+						<div class="ss-form-question errorbox-good" role="listitem">
+						<div dir="auto" class="ss-item ss-item-required ss-text">
+							<div class="ss-form-entry">
+								<!-- question label -->
+
+								<div class="questionLabels">
+
+
+								<label class="ss-q-item-label" for="entry_2117137565"><div class="ss-q-title">Name
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+								</div>
+
+								<!-- Answer labels -->
+							<div class="answerLabels Query_id">
+
+								<input type="text" name="entry.2117137565" value="" class="ss-q-short" id="entry_2117137565" dir="auto" aria-label="Query_Id  " aria-required="true" required="" title="" autocomplete="off" placeholder="Your full name">
+
+
+
+
+							</div>
+								<div class="error-message" id="1648097047_errorMessage"></div>
+							<!-- <div class="error-message" id="336080986_errorMessage"></div> -->
+							</div></div></div>
+
+					</div>
+
+												<div class="feedbackQuestion" id="feedback_name_field">
+
+													<div class="ss-form-question errorbox-good" role="listitem">
+													<div dir="auto" class="ss-item ss-item-required ss-text">
+														<div class="ss-form-entry">
+															<!-- question label -->
+
+															<div class="questionLabels">
+
+
+															<label class="ss-q-item-label" for="entry_1822583437"><div class="ss-q-title">XYZ Email
+							<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+							<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+							<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+								</div>
+
+								<!-- Answer labels -->
+							<div class="answerLabels Query_id">
+
+								<input type="text" name="entry.1822583437" value="" class="ss-q-short" id="entry_1822583437" dir="auto" aria-label="XYZ Email  "  aria-required="true" required="" title="" autocomplete="off" placeholder="Your email address">
+
+
+
+							</div>
+							<!-- <div class="error-message" id="336080986_errorMessage"></div> -->
+							</div></div></div>
+
+					</div>
+
+
+
+					<div class="feedbackQuestion" >
+
+	<div class="ss-form-question errorbox-good" role="listitem">
+	<div dir="auto" class="ss-item ss-item-required ss-text">
+		<div class="ss-form-entry">
+			<!-- question label -->
+
+			<div class="questionLabels">
+
+
+			<label class="ss-q-item-label" for="entry_2042978664"><div class="ss-q-title">Degree Program
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+			</div>
+
+			<!-- Answer labels -->
+		<div class="answerLabels Query_id">
+
+			<input type="text" name="entry.227921436" value="" class="ss-q-short" id="entry_2042978664" dir="auto" aria-label="Query_Id  " aria-required="true" required="" title="" autocomplete="off" placeholder="Degree Program">
+
+
+
+
+		</div>
+			<div class="error-message" id="1648097047_errorMessage"></div>
+		<!-- <div class="error-message" id="336080986_errorMessage"></div> -->
+		</div></div></div>
+
+</div>
+
+
+<div class="feedbackQuestion" >
+
+	<div class="ss-form-question errorbox-good" role="listitem">
+	<div dir="auto" class="ss-item ss-item-required ss-text">
+		<div class="ss-form-entry">
+			<!-- question label -->
+
+			<div class="questionLabels">
+
+
+			<label class="ss-q-item-label" for="entry_1475354781"><div class="ss-q-title">Department
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+			</div>
+
+			<!-- Answer labels -->
+		<div class="answerLabels Query_id">
+
+			<input type="text" name="entry.228697677" value="" class="ss-q-short" id="entry_1475354781" dir="auto" aria-label="Query_Id  " aria-required="true" required="" title="" autocomplete="off" placeholder="Department">
+
+
+
+
+		</div>
+			<div class="error-message" id="1648097047_errorMessage"></div>
+		<!-- <div class="error-message" id="336080986_errorMessage"></div> -->
+		</div></div></div>
+
+</div>
+
+
+
+
+
+<!-- <div class="feedbackQuestion">
+
+	<div class="ss-form-question errorbox-good" role="listitem">
+ <div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+
+			<div class="questionLabels">
+
+				<label class="ss-q-item-label" for="entry_544248159"><div class="ss-q-title">Are you international student?
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+			</div>
+
+
+			<div class="answerLabels">
+
+				<ul class="ss-choices" role="radiogroup" aria-label="Are you international student?"><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.544248159" value="Yes" id="entry_2104468192_yes" role="radio" class="ss-q-radio" aria-label="Yes" required="" aria-required="true"></span>
+<span class="ss-choice-label">Yes</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.544248159" value="No" id="entry_2104468192_no" role="radio" class="ss-q-radio" aria-label="No" required="" aria-required="true"></span>
+<span class="ss-choice-label">No</span>
+</label></li></ul>
+
+			</div>
+
+			<div class="error-message" id="77047778_errorMessage"></div>
+			</div></div></div>
+
+</div> -->
+
+
+
+
+
+						<!-- Question 2  -->
+						<!-- Question 2  -->
+
+					<!-- This is going to be second question and will contain selecting multiple choice -->
+
+					<div class="feedbackQuestion">
+
+						<div class="ss-form-question errorbox-good" role="listitem">
+					 <div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+
+								<!-- Styling the questioning labels 	 -->
+								<div class="questionLabels">
+
+									<label class="ss-q-item-label" for="entry_77047778"><div class="ss-q-title">Overall, I am satisfied with how easy it is to use this system.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+								</div>
+								<!-- Styling the questioning labels 	 -->
+
+								<!-- styling answer labels -->
+
+								<div class="answerLabels">
+
+									<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the ease of completing the task ?  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1993041656" value="1" id="group_929807715_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1993041656" value="2" id="group_929807715_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1993041656" value="3" id="group_929807715_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1993041656" value="4" id="group_929807715_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1993041656" value="5" id="group_929807715_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1993041656" value="6" id="group_929807715_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1993041656" value="7" id="group_929807715_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+								</div>
+								<!-- styling answer labels -->
+
+								<div class="error-message" id="77047778_errorMessage"></div>
+								</div></div></div>
+
+					</div>
+
+						<!-- Rating Question -->
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_292813960"><div class="ss-q-title">It was simple to use this system.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the amount of time it took to complete the task?  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="1" id="group_731399091_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="2" id="group_731399091_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="3" id="group_731399091_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="4" id="group_731399091_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="5" id="group_731399091_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="6" id="group_731399091_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="7" id="group_731399091_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="292813960_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+						<!-- Question 3  -->
+						<!-- Question 3  -->
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">I could effectively complete the tasks and scenarios using this system.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">I was able to complete the tasks and scenarios quickly using this system.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.130836785" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.130836785" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.130836785" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.130836785" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.130836785" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.130836785" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.130836785" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">I was able to efficiently complete the tasks and scenarios using this system.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.707315987" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.707315987" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.707315987" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.707315987" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.707315987" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.707315987" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.707315987" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">I felt comfortable using this system.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.438030673" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.438030673" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.438030673" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.438030673" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.438030673" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.438030673" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.438030673" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">It was easy to learn to use this system.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1198760575" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1198760575" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1198760575" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1198760575" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1198760575" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1198760575" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1198760575" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">The information (such as on-line help, on-screen messages and other documentation) provided with this system was clear.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1470880795" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1470880795" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1470880795" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1470880795" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1470880795" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1470880795" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1470880795" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">It was easy to find the information I needed.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1323608894" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1323608894" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1323608894" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1323608894" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1323608894" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1323608894" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1323608894" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">The information provided for the system was easy to understand.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1298667099" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1298667099" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1298667099" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1298667099" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1298667099" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1298667099" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1298667099" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">The information was effective in helping me complete the tasks and scenarios.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.93484797" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.93484797" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.93484797" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.93484797" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.93484797" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.93484797" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.93484797" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">The organization of information on the system screens was clear.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1465668039" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1465668039" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1465668039" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1465668039" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1465668039" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1465668039" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1465668039" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">The interface of this system was pleasant.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1106852941" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1106852941" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1106852941" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1106852941" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1106852941" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1106852941" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1106852941" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">I liked using the interface of this system.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.564802261" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.564802261" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.564802261" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.564802261" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.564802261" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.564802261" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.564802261" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">This system has all the functions and capabilities I expect it to have.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1706473972" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1706473972" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1706473972" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1706473972" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1706473972" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1706473972" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1706473972" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">Overall, I am satisfied with this system.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1920882815" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1920882815" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1920882815" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1920882815" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1920882815" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1920882815" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1920882815" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+
+
+						<!-- Question Comments  -->
+						<!-- Question Comments  -->
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-paragraph-text">
+								<div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_1110083243"><div class="ss-q-title">Comments?
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<textarea name="entry.1126896707" rows="8" cols="0" class="ss-q-long" id="entry.1126896707" dir="auto" aria-label="Comments?  "></textarea>
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="1521404532_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+						<!-- Extra Data With Hidden Fields -->
+						<!-- Extra Data With Hidden Fields -->
+						<!-- Extra Data With Hidden Fields -->
+						<!-- Extra Data With Hidden Fields -->
+						<!-- Extra Data With Hidden Fields -->
+
+<div class="row" id="thehiddenField" style="display:none;">
+
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_982064888"><div class="ss-q-title">Unique Id
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.982064888" value="" class="ss-q-short" id="entry_982064888_1" dir="auto" aria-label="Unique Id  " title="">
+<div class="error-message" id="363132949_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+	<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+	<label class="ss-q-item-label" for="entry_5453654646"><div class="ss-q-title">System
+	</div>
+	<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+	<input type="text" name="entry.1224360712" value="" class="ss-q-short" id="entry_5453654646_1" dir="auto" aria-label="System  " title="">
+	<div class="error-message" id="363132949_errorMessage"></div>
+	<div class="required-message">This is a required question</div>
+	</div></div></div>
+
+						<!-- Extra data Ends -->
+						<!-- Extra data Ends -->
+						<!-- Extra data Ends -->
+						<!-- Extra data Ends -->
+						<!-- Extra data Ends -->
+
+						<input type="hidden" name="draftResponse" value="[null,null,&quot;-1011607179116098619&quot;]
+
+">
+<input type="hidden" name="pageHistory" value="0">
+
+<input type="hidden" name="fvv" value="0">
+
+
+<input type="hidden" name="fbzx" value="-1011607179116098619">
+</div>
+						<div class="ss-item ss-navigate submitButton">
+							<input type="submit" name="submit" value="Submit" id="ss-submit" onclick="collectDumpVariables()" class="jfk-button jfk-button-action btn btn-primary btn-lg" style="text-align:center;">
+						</div>
+						</ol></form>
+
+				</div>
+
+
+		</div><!-- closing modal-body-->
+
+	</div>
+</div>
+</div>
+
+<!-- Code Ends here : Rudresh -->
+
+
+<div id="policyModal" class="modal fade" role="dialog" aria-labelledby="myLargeModalLabel" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content" style="opacity:0.9;">
+			<div class="modal-header" style="height:50px;font-family:Segoe UI;font-size:15px;">
+				<h4 class="modal-title modalTitle">Agreement</h4>
+			</div>
+			<div class="modal-body">
+					<div class="termsCondition">
+
+			<ul class="UL" style="padding:10px; border: solid 2px #d3d3d3; font-family:Segoe UI; text-align:justify;">
+				<p><h4>My name is ******, and I am asking you to participate in a ***** research study titled “Orion: A Visual Query Formulation System for Knowledge Graphs”. This research study is about evaluating a system that helps visually formulate a query.  The system is hosted in a website where it provides necessary tools to draw a query on a given space. The research study result will help our team evaluate the system. You can choose to participate in this research study if you are at least 18 years old and a junior, senior or graduate student of the [department name] at [institution name], under the condition that you never participated in this study before and you are not a member of the [group name].</h4> </p>
+
+				<p><h4>Reasons why you might want to participate in this study include:</h4></p>
+				<ol>
+					<li>The opportunity to contribute to a less-explored research area that we believe is beneficial to a specific user group and the database community as a whole.</li>
+					<li>An experience to play the role of a stakeholder in the development of a novel software tool.</li>
+				</ol>
+
+				<p><h4>But you might not want to participate if you do not feel comfortable with activities you are expected to perform (see details below) or you do not have the time. Your decision about whether to participate is entirely up to you. If you decide not to be in the study, there will not be any punishment or penalty; whatever your choice, there will be no impact on any benefits or services that you would normally receive. Even if you choose to begin the study, you can also change your mind and quit at any time without any consequences. </h4></p>
+
+				<p><h4>If you decide to participate in this research study, the list of activities that I will ask you to complete for the research are:</h4></p>
+				<ol>
+					<li>Read through this informed consent and talk with the research team to make sure that any questions you may have are answered; then make your choice about whether to participate.</li>
+					<li>If you agree to participate, you will be seated in a computer lab and will be assigned to a computer.</li>
+					<li>You will be asked to watch a video tutorial that describes the system you will be using.</li>
+					<li>You will be given five minutes to independently practice the system.</li>
+					<li>You will be given 6 graph query formulation tasks to solve using the system. The tasks will be chosen from a pool of 15 tasks, where you will get to solve 2 (chosen from 5) tasks from each difficulty (easy, medium, hard) level. The task will be in the form of natural language question, which you will convert to a graph query using the graph drawing tool provided by our system. The success of task completion will be assessed by the overlap of your solution with our expected solution as well as measuring the time you spent to solve the task. After solving each task, you will be asked to fill out a questionnaire to measure their experience of solving this task. Once all tasks are finished, you will be asked to fill out a final questionnaire to specify your name, *** email, department, education level and share overall experience of using the system.</li>
+				</ol>
+
+
+				<p><h4>It should take about 75 minutes. Although you probably will not experience any personal benefits from participating, the study activities are not expected to pose any additional risks beyond those that you would normally experience in your regular everyday life or during routine medical / psychological visits.</h4> </p> 
+
+				<p><h4>You will receive a compensation of a $20 to $25 gift card. To get the additional reward (a gift card higher than $20) you need to listen the instructions attentively, stay focused during the user study and accomplish the tasks correctly within the given time. We will make our best effort to pay you within two weeks after use study.  There are no alternative options to this research project. The Internal Revenue Service (IRS) considers all payments made to research subjects to be taxable income; this may require additional information to be collected from you for tax purposes, such as your social security number.</h4> </p>
+				
+				<p><h4>There can be risk of undue influence because you are recruited by a professor. Since there is an authority difference between the two parties, it is possible that you might feel compelled to participate in the research against your best interests. You may worry about your grades, future research opportunities, etc., if you decline. We want to assure you that the decision to participate or not participate will not influence your grades or future research opportunities.</h4></p>
+				
+				<p><h4>The research team is committed to protecting your rights and privacy as a research subject.  We may publish or present the results, but your name will not be used.  While absolute confidentiality cannot be guaranteed, the research team will make every effort to protect the confidentiality of your records as described here and to the extent permitted by law. If the data is lost or stolen, you may feel the risk to be exposed as a research subject in a usability study. To minimize this risk, we are storing the data on ***-sanctioned cloud storage (OneDrive) and will limit its access to protocol personnel only. If you have questions about the study, you can contact me at cli@uta.edu. For questions about your rights or to report complaints, contact the *** Research Office at xxx-xxx-xxxx or x@y.edu.</h4> </p>  
+
+				<!-- <p><h4>Thank you for participating in this user study. The opinions of all users will be collated and used for academic purposes.</h4> </p>
+
+				<p><h4>Click Accept to proceed to the user study. Otherwise click Decline to go back to the homepage.</h4></p>
+
+				<p><h4>The Orion team would like to thank you again for your time and contributions. We welcome any feedback you may have to improve the overall experience.</h4></p> -->
+			</ul>
+
+
+
+			</div>
+			<div class="innerDivForButton">
+						<button type="button" id="agreeButton" class="btn btn-success agree" onclick="myFunctionForHiding()" data-toggle="collapse" data-target="#FillForm">Accept</button>
+								<button type="button" id="declinePolicy" class="btn btn-danger decline" class="close">Decline</button>
+						</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+<div class="modal fade bs-example-modal-lg" id="surveyForm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal-dialog modal-lg">
+	<div class="modal-content">
+
+		<div class="modal-header modalHeader">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">SURVEY FORM</h4>
+		</div>
+
+		<div class="modal-body">
+
+			<script type="text/javascript">var submitted=false;</script>
+			<iframe name="hidden_iframe" id="hidden_iframe"
+			style="display:none;" onload="onFormSubmit()"></iframe>
+
+
+				<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdWz-vUiIX2OjM7Fh-EfYFfJyqFAkP-oUXVgGR7RPLMvmzy-g/formResponse" method="POST" id="ss-form" target="hidden_iframe" autocomplete="on" onsubmit="submitted=true;" ><ol role="list" class="ss-question-list" style="padding-left: 0;">
+			<!-- For first Field	 -->
+				<!-- for the second field -->
+<!-- 				<div class="OuterDivForButton" id="tobeHiddenAfterClick">
+						<div class="innerDivForButton">
+						<a class="smoothScroll" href="#focusPage"><button type="button" id="agreeButton" class="btn btn-success agree" onclick="myFunctionForHiding()" data-toggle="collapse" data-target="#FillForm">Agree</button></a>
+								<button type="button" class="btn btn-danger decline" data-toggle="collapse" class="close" data-dismiss="modal" data-target="../">Decline</button>
+						</div>
+				</div> -->
+
+
+				<div id="slide">
+				<div class="IntroPart" id="IntroPart" style="display:block;">
+						<h4 class="headP">Please answer the questions below</h4>
+				</div></div>
+				<!-- Form to be filled as  the user has accepted the request -->
+
+
+
+
+
+				<div   style="position:relative;">
+
+						<!-- Input 1 - Text Box  -->
+
+					<!-- This will be first Multiple Choice Question with Radio Buttons-->
+					<div class="feedbackQuestion" style="display:none;">
+
+						<div class="ss-form-question errorbox-good" role="listitem">
+						<div dir="auto" class="ss-item ss-item-required ss-text">
+							<div class="ss-form-entry">
+								<!-- question label -->
+
+								<div class="questionLabels">
+
+
+								<label class="ss-q-item-label" for="entry_31427235"><div class="ss-q-title">Query_Id
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+								</div>
+
+								<!-- Answer labels -->
+							<div class="answerLabels Query_id">
+
+								<input type="text" name="entry.31427235" value="" class="ss-q-short" id="entry_31427235" dir="auto" aria-label="Query_Id  " aria-required="true" title="" autocomplete="off">
+
+
+
+
+							</div>
+								<div class="error-message" id="1648097047_errorMessage"></div>
+							<!-- <div class="error-message" id="336080986_errorMessage"></div> -->
+							</div></div></div>
+
+					</div>
+
+
+
+
+
+						<!-- Question 2  -->
+						<!-- Question 2  -->
+
+					<!-- This is going to be second question and will contain selecting multiple choice -->
+
+					<div class="feedbackQuestion">
+
+						<div class="ss-form-question errorbox-good" role="listitem">
+					 <div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+
+								<!-- Styling the questioning labels 	 -->
+								<div class="questionLabels">
+
+									<label class="ss-q-item-label" for="entry_77047778"><div class="ss-q-title">Overall, I am satisfied with the ease of completing the task ?
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+								</div>
+								<!-- Styling the questioning labels 	 -->
+
+								<!-- styling answer labels -->
+
+								<div class="answerLabels">
+
+									<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the ease of completing the task ?  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1988546234" value="1" id="group_929807715_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1988546234" value="2" id="group_929807715_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1988546234" value="3" id="group_929807715_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1988546234" value="4" id="group_929807715_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1988546234" value="5" id="group_929807715_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1988546234" value="6" id="group_929807715_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1988546234" value="7" id="group_929807715_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+								</div>
+								<!-- styling answer labels -->
+
+								<div class="error-message" id="77047778_errorMessage"></div>
+								</div></div></div>
+
+					</div>
+
+						<!-- Rating Question -->
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_292813960"><div class="ss-q-title">Overall, I am satisfied with the amount of time it took to complete the task?
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the amount of time it took to complete the task?  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="1" id="group_731399091_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="2" id="group_731399091_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="3" id="group_731399091_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="4" id="group_731399091_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="5" id="group_731399091_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="6" id="group_731399091_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.198751215" value="7" id="group_731399091_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="292813960_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+						<!-- Question 3  -->
+						<!-- Question 3  -->
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span style="color:red;" class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.687343967" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span style="color:green;" class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+
+
+						<!-- Question Comments  -->
+						<!-- Question Comments  -->
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-paragraph-text">
+								<div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_1110083243"><div class="ss-q-title">Comments?
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<textarea name="entry.1126896707" rows="8" cols="0" class="ss-q-long" id="entry.1126896707" dir="auto" aria-label="Comments?  "></textarea>
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="1521404532_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+
+						<!-- Extra Data With Hidden Fields -->
+
+<div class="row" id="thehiddenField" style="display:none;">
+
+
+	<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_425796398"><div class="ss-q-title">Partial Query Graph
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.1521443169" value="" class="ss-q-short" id="entry_425796398" dir="auto" aria-label="Partial Query Graph  " title="">
+<div class="error-message" id="633333439_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_2022483379"><div class="ss-q-title">rejected query graph
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.1605347471" value="" class="ss-q-short" id="entry_2022483379" dir="auto" aria-label="rejected query graph  " title="">
+<div class="error-message" id="97889570_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_914362311"><div class="ss-q-title">start_time
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.891499890" value="" class="ss-q-short" id="entry_914362311" dir="auto" aria-label="start_time  " title="">
+<div class="error-message" id="425231887_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_978148691"><div class="ss-q-title">End_Time
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.1146273900" value="" class="ss-q-short" id="entry_978148691" dir="auto" aria-label="End_Time  " title="">
+<div class="error-message" id="1651340883_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_1515945795"><div class="ss-q-title">No_of_iterations
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.1643886797" value="" class="ss-q-short" id="entry_1515945795" dir="auto" aria-label="No_of_iterations  " title="">
+<div class="error-message" id="363132949_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_982064888"><div class="ss-q-title">Unique Id
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.982064888" value="" class="ss-q-short" id="entry_982064888" dir="auto" aria-label="Unique Id  " title="">
+<div class="error-message" id="363132949_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_1404241487"><div class="ss-q-title">Time_Elapsed = Start_Time-EndTime
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.1978858642" value="" class="ss-q-short" id="entry_1404241487" dir="auto" aria-label="Time_Elapsed = Start_Time-EndTime  " title="">
+<div class="error-message" id="315835826_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+	<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+	<label class="ss-q-item-label" for="entry_5453654645"><div class="ss-q-title">Version
+	</div>
+	<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+	<input type="text" name="entry.395658898" value="" class="ss-q-short" id="entry_5453654645" dir="auto" aria-label="Version " title="">
+	<div class="error-message" id="315835826_errorMessage"></div>
+	<div class="required-message">This is a required question</div>
+	</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+	<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+	<label class="ss-q-item-label" for="entry_5453654646"><div class="ss-q-title">System
+	</div>
+	<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+	<input type="text" name="entry.445758993" value="" class="ss-q-short" id="entry_5453654646" dir="auto" aria-label="System " title="">
+	<div class="error-message" id="315835826_errorMessage"></div>
+	<div class="required-message">This is a required question</div>
+	</div></div></div>
+</div>
+
+						<!-- Extra data Ends -->
+						<!-- Extra data Ends -->
+						<!-- Extra data Ends -->
+						<!-- Extra data Ends -->
+						<!-- Extra data Ends -->
+
+						<input type="hidden" name="draftResponse" value="[null,null,&quot;-1011607179116098619&quot;]
+
+">
+<input type="hidden" name="pageHistory" value="0">
+
+<input type="hidden" name="fvv" value="0">
+
+
+<input type="hidden" name="fbzx" value="-1011607179116098619">
+
+						<div class="ss-item ss-navigate submitButton">
+							<input type="submit" name="submit" value="Submit" id="ss-submit" onclick="collectDumpVariables()" class="jfk-button jfk-button-action btn btn-primary btn-lg" style="text-align:center;">
+						</div>
+						</ol></form>
+
+				</div>
+
+
+		</div><!-- closing modal-body-->
+
+	</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Dialog Modal Starts here -->
+
+<!-- Modal -->
+<div class="modal fade" id="DialogModal" name="targget" role="dialog">
+<div class="modal-dialog modal-sm">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Form Submission Successful</h4>
+		</div>
+		<div class="modal-body">
+			<p>Thanks For Your Feedback.</p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="modal fade" id="twoEdgeModal" name="targget" role="dialog">
+<div class="modal-dialog modal-sm">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Warning</h4>
+		</div>
+		<div class="modal-body">
+			<p>Warning: Maximum two edges can be added between a pair of nodes.
+</p>
+		</div>
+
+	</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+		<div class="modal fade" id="loading" data-backdrop="static" data-keyboard="false" style="top:300px;z-index:1300;">
+			<div class="modal-dialog" style="opacity:0.7; width: 140px;">
+			<div class="modal-content ">
+				<div class ="modal-body">
+				 <img src="images/ajax-loader.gif" id="loading-indicator" style="display:none; opacity: 1; z-index:1301;" />
+			</div>
+			</div>
+		</div>
+		</div>
+
+
+
+
+		<div class="modal fade" id="nodeEditModal" data-backdrop="static" data-keyboard="false" style="font-family: segoe UI;">
+			<div class="modal-dialog" style="width:1010px;">
+				<div class="modal-content">
+					<div class="modal-header">
+<!-- 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="node-edit-x-button" style="font-size: 15px;">close</button> -->
+						<h4 class="modal-title" id="node-edit-modal-title">Set a type/entity</h4>
+					</div>
+					<div class="modal-body">
+					<div class="row" id="node-edit-selectDiv">
+						<div id="node-edit-domain" class="col-sm-4" style="padding:0px 22px;">
+							<div class="row">
+								<b>Domains</b>
+							</div>
+							<div id="node-edit-type-search" class="row">
+								<input type="text"  autocomplete="off" style="display: none;">
+							</div>
+							<div class="row" style="visibility: collapse;">
+								<input type="text"  autocomplete="off" >
+								 <div style="height: 11px;"></div>
+							</div>
+							<div class="row" class="border: 1.5px solid #9aa9a9;border-radius: 10px;z-index:1;">
+								<select id="node-edit-domain-options" style="border: 1.5px solid #9aa9a9;border-radius: 10px;width:100%;height:345px;margin:auto;text-transform: uppercase;border-radius: 10px;overflow:auto;font-family:helvetica;" class="" size=20 name="">
+
+
+								</select>
+							</div>
+
+							<div class="col-sm-4" style="margin-left:-15px;margin-right:-20px;padding:0px;width:100%;">
+									 <input type="text" id="edit-domain-selected" style ="font-style: italic; text-transform:uppercase;display: none; border-radius: 8px; overflow: visible;text-overflow: ellipsis; float: left; text-align: center; background-color:#80CCCC;border-width:0px;color:#063145;max-width:290px;margin-bottom: 3px; margin-top:8px; " disabled="disabled">
+														 <button type="button" class="close-icon" id="edit-domain-x-button" style="display:none; margin-top: 10px;">×</button>
+							</div>
+
+						</div>
+						<div id="node-edit-type" class="col-sm-4" style="padding:0px 22px;">
+							<div class="row">
+								<b>Types</b>
+							</div>
+							<div id="node-edit-type-search" class="row">
+								<input type="text" name="test6" value="" id="form_tags_input_7" autocomplete="off" style="display: none;">
+
+							</div>
+<!-- 							<div class="row" style="visibility: collapse;">
+								<input type="text"  autocomplete="off" >
+								 <div style="height: 11px;"></div>
+							</div> -->
+							<div class="row" class="border: 1.5px solid #9aa9a9;border-radius: 10px;z-index:1;">
+								<select id="node-edit-type-options" style="border: 1.5px solid #9aa9a9;border-radius: 10px;width:100%;height:345px;margin:auto;text-transform: uppercase;border-radius: 10px;overflow:auto;font-family:helvetica;" class="" size=20 name="">
+								</select>
+								<div style="text-align:center;">
+									<button type = "button" id="node-edit-type-back" style="margin-bottom:1px;background-color: white; padding: 4px 6px; margin-left:5px; border: 0px;">&#9668 Prev</button>
+									<button type = "button" id="node-edit-type-next" style="background-color: white; padding: 4px 6px; border: 0px;">Next &#9658</button>
+								</div>
+
+							</div>
+
+							<div class="col-sm-4" style="margin-left:-15px;margin-right:-20px;padding:0px;width:100%;">
+								<input type="text" id="edit-type-selected" style ="text-transform:uppercase;display: none; border-radius: 8px; overflow: visible;text-overflow: ellipsis; float: left; text-align: center; background-color:#80CCCC;border-width:0px;color:#063145;max-width:290px;margin-bottom: 3px; margin-top:8px; " disabled="disabled">
+												<button type="button" class="close-icon" id="edit-type-x-button" style="display:none; margin-top: 10px;">×</button>
+							</div>
+
+						</div>
+
+						<div id="node-edit-entity" class="col-sm-4" style="padding:0px 22px;">
+
+							<div class="row">
+								<b>Entities</b>
+							</div>
+							<div id="node-edit-entity-search" class="row">
+								<input type="text" name="test6" value="" id="form_tags_input_6" autocomplete="off" style="display: none;">
+							</div>
+							<div class="row" class="border: 1.5px solid #9aa9a9;border-radius: 10px;z-index:1;">
+								<select id="node-edit-entity-options" style="border: 1.5px solid #9aa9a9;border-radius: 10px;width:100%;height:345px;margin:auto;border-radius: 10px;overflow:auto;" class="" size=20 name="">
+
+
+								</select>
+								<div style="text-align:center;">
+									<button type = "button" id="node-edit-entity-back" style="margin-bottom:1px;background-color: white; padding: 4px 6px; margin-left:5px; border: 0px;">&#9668 Prev</button>
+									<button type = "button" id="node-edit-entity-next" style="background-color: white; padding: 4px 6px; border: 0px;">Next &#9658</button>
+								</div>
+							</div>
+							<div class="col-sm-4" style="margin-left:-15px;margin-right:-20px;padding:0px;width:100%;">
+								<input type="text" id="edit-entity-selected" style ="text-transform:uppercase;display: none; border-radius: 8px; overflow: visible;text-overflow: ellipsis; float: left; text-align: center; background-color:#80CCCC;border-width:0px;color:#063145;max-width:290px;margin-bottom: 3px; margin-top:8px; " disabled="disabled">
+												<button type="button" class="close-icon" id="edit-entity-x-button" style="display:none; margin-top: 10px;">×</button>
+							</div>
+
+						</div>
+					</div>
+					<div style="text-align:center;padding-top:10px;">
+						<span id="edit-add-type-text"></span>
+						<button type="button" class="btn btn-primary" id="edit-add-type-button" style="width: auto;font-size: 16px;padding-left:9px;">Yes</button>
+						<br><br>
+						<p id="edit-type-list"> This node currently belongs to the following Types (and the corresponding Domains):</p><br>
+						<table id="edit-dtl" style="width:60%">
+						  <tr>
+						    <th class="text-center">Domain</th>
+						    <th class="text-center">Type</th>
+						    <th class="text-left"></th>
+						  </tr>
+						</table>
+						<br>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" id="node-edit-x-button" style="width: 75px; font-size: 16px; padding-left:9px;">Cancel</button>
+					<button type="button" class="btn btn-primary" id="node-edit-save-changes" style="background-color:#828b8f;width: 75px; font-size: 16px; padding-left:9px;">Confirm</button></div>
+				</div>
+
+			 </div><!-- /.modal-content -->
+		 </div>
+		 <div class="filler" style="height:100%;width:100%;background-color:rgba(17,17,17,0.2);position:absolute;display:none;z-index:2000;">
+				 <div class="setter" style="position:relative;left:45%;top:30%;">
+					 <img src="images/ajax-loader.gif" id="loading-indicator" style="opacity:1;" />
+				 </div>
+		 </div><!-- /.modal-dialog -->
+	 </div><!-- /.modal -->
+
+<div class="modal fade" id="myModal" role="dialog" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog" style="width:1010px;">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+<!-- 				<button type="button" class="close" data-dismiss="modal" id="x-button">&times;</button> -->
+				<h4 class="modal-title" id="modal-title">Modal Header</h4>
+			</div>
+			<div class="modal-body">
+				<div id = "selectDiv" class="row" style="margin:0px;">
+					<div id="edge-div" style ="display: none;">
+					<div class="row">
+						<div class="row" style="padding-bottom: 5px;">
+
+						<select class="form-control wrapper col-md-11" id="edge-options" style="margin:57px;width: 85%;">
+							<option value="Select Name" id="add-value-1" >select Edge...</option>
+						</select>
+						</div>
+					</div>
+					</div>
+					<div id="domain-div" style="padding:0px 22px;" class="col-sm-4">
+						<div class="row">
+							<b>Domains</b>
+						</div>
+						<div id ="domain-keyword-div" style="width:100%;margin-bottom:5px;" >
+
+
+							<input type="text" id="domain-selected-value" value="-1" style="display:none;">
+
+						</div>
+						<div class="row" style="visibility: collapse;">
+							<input type="text"  value="" autocomplete="off" >
+							 <div style="height: 7px;"></div>
+						</div>
+						<div class="row" style="overflow:hidden;padding:0px;border: 1.5px solid #9aa9a9;border-radius: 10px;">
+							<select id="domain-options" style="width:100%;height:345px;margin:auto;text-transform: uppercase;border-radius: 10px;overflow:auto;" class="" size=20 name="">
+
+							</select>
+							<div style="text-align:center;visibility:hidden;">
+							<button type = "button" style="background-color: white; padding: 4px 6px; margin-left:5px;border: 0px;">&#9668 Prev</button>
+							<button type = "button" style="background-color: white; padding: 4px 6px; border: 0px;">Next &#9658</button>
+							</div>
+						</div>
+						<div class="row">
+
+						</div>
+						<div class="col-sm-4" style="margin-left:-15px;margin-right:-20px;padding:0px;width:100%;">
+									 <input type="text" id="domain-selected" style ="font-style: italic; text-transform:uppercase;display: none; border-radius: 8px; overflow: visible;text-overflow: ellipsis; float: left; text-align: center; background-color:#80CCCC;border-width:0px;color:#063145;max-width:290px;margin-bottom: 3px; margin-top:8px; " disabled="disabled">
+				<button type="button" class="close-icon" id="domain-x-button" style="display:none; margin-top: 10px;">×</button>
+							</div>
+
+					</div>
+					<div id="type-border" style="padding:0px 22px;" class="col-sm-4">
+
+						<div class="row" >
+							<b>Types</b>
+						</div>
+						<div id ="type-keyword-div" style="margin-bottom:5px;margin-left:-20px;margin-right:-20px;" >
+
+
+							<input type="text" id="type-selected-value" value="-1" style="display:none;">
+
+							<input type="text" name="test5" value="" id="form_tags_input_5" autocomplete="off" style="display: none;">
+
+						</div>
+						<div id="type-div" class="row" style="box-sizing: border-box;overflow:hidden;z-index:1;border: 1.5px solid #9aa9a9;border-radius: 10px;">
+							<select id = "type-options" style=" z-index:-1;width:100%;height:345px;border-radius: 10px;margin:auto;text-transform:uppercase;overflow:auto;" class="" size=20 name="">
+
+							</select>
+							<div style="text-align:center;">
+							<button type = "button" id="type-back" style="background-color: transparent; padding: 4px 6px; margin-left:5px; border: 0px;">&#9668 Prev</button>
+			<button type = "button" id="type-next" style="background-color: transparent; padding: 6px 6px; border: 0px;">Next &#9658</button>
+			</div>
+						</div>
+						<div class="row">
+
+						</div>
+						<div class="col-sm-4" style="margin-left:-15px;margin-right:-20px;padding:0px;width:306px;">
+									<input type="text" id="type-selected" style ="text-transform:uppercase;display: none; border-radius: 8px; overflow: visible;text-overflow: ellipsis; float: left;text-align: center; background-color:#80CCCC;border-width:0px;color:#063145;max-width:283px; width:100%; margin-bottom: 3px; margin-top:8px;" disabled="disabled">
+						 <button type="button" class="close-icon" id="type-x-button" style="display:none; margin-top: 10px;">×</button>
+							</div>
+
+					</div>
+					<div id="entity-border" style="padding:0px 22px;" class="col-sm-4">
+
+						<div class="row" >
+							<b>Entities</b>
+						</div>
+						<div id ="keyword-div" style="margin-bottom:5px;margin-left:-20px;margin-right:-20px;">
+
+
+							<input type="text" id="entity-selected-value" value="-1" style="display:none;">
+
+							<input type="text" name="test4" value="" id="form_tags_input_4" autocomplete="off" style="display: none;">
+						</div>
+						<div id="entity-div" class="row" style="overflow:hidden;padding:0px;border: 1.5px solid #9aa9a9;border-radius: 10px;z-index:1;">
+							<select id = "entity-options" style="width:100%;height:345px;margin:auto;overflow:auto;border-radius: 10px;display: flex;" class="" size=20 name="">
+
+							</select>
+							<div style="text-align:center;">
+							<button type = "button" id="entity-back" style="margin-bottom:1px;background-color: white; padding: 4px 6px; margin-left:5px; border: 0px;">&#9668 Prev</button>
+			<button type = "button" id="entity-next" style="background-color: white; padding: 4px 6px; border: 0px;">Next &#9658</button>
+			</div>
+						</div>
+						<div class="row">
+
+						</div>
+						<div class="col-sm-4" style="margin-left:-15px;margin-right:-20px;padding:0px;width:306px;">
+								 <input type="text"  id="entity-selected" style ="display: none; border-radius: 8px; overflow: visible; text-overflow: ellipsis; float: left; text-align: center; background-color: #80CCCC; border-width: 0px; color: #063145;max-width:283px; width:100%; margin-bottom: 2px; margin-top: 10px;" disabled="disabled">
+								<button type="button" class="close-icon" id="entity-x-button" style="display:none; margin-top: 10px;">×</button>
+							</div>
+
+
+					</div>
+					</div>
+					<div class="row" id="selected-div" style="padding-left:2px;">
+
+
+					</div>
+					<div style="text-align:center;padding-top:30px;">
+					<span id="add-type-text"></span>
+        	<button type="button" class="btn btn-primary" id="add-type-button" style="width: auto;font-size: 16px;padding-left:9px;">Yes</button>
+    			<br><br>
+					<p id="type-list">This node currently belongs to the following Types (and the corresponding Domains):</p><br>
+					<table id="dtl" style="width:60%">
+						<tr>
+							<th class="text-center">Domain</th>
+							<th class="text-center">Type</th>
+							<th></th>
+						</tr>
+					</table>
+          <br>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" id="x-button" style="width: 75px; font-size: 16px; padding-left:9px;">Cancel</button>
+					<button type="button" class="btn btn-primary" id="save-changes" style="background-color:#828b8f;width: 75px; font-size: 16px; padding-left:9px;">Confirm</button></div>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+	</div>   <!-- container -->
+	<!-- <div class="container"> -->
+	<!--<div class="container-fluid" style="margin-top:5px; margin:0px;">-->
+		<!--adding query result table-->
+		<div class="modal-dialog" id="query-result-modal" style="width:1010px;" hidden="hidden">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+	<!-- 				<button type="button" class="close" data-dismiss="modal" id="x-button">&times;</button> -->
+					<h3 class="modal-title"><h3><center>Query Result</center></h3></h3>
+				</div>
+				<div class="modal-body" id="query-modal-body">
+					<div class="form-group" style="width:400px; margin:0 auto; padding: 10px">
+						<label for="query-keyword">Filter by keyword:</label>
+						<input type="text" id="query-keyword" name="query-keyword" value="">
+					</div>
+					<table border="1" id="query-result-table" style="width:60%">
+					</table>
+					<div style="text-align:center;">
+						<button type="button" id="result-back" style="margin-bottom:1px;background-color: white; padding: 4px 6px; margin-left:5px; border: 0px;" hidden="hidden">◄ Prev</button>
+						<button type="button" id="result-next" style="margin-bottom:1px;background-color: white; padding: 4px 6px; margin-right:5px; border: 0px;" hidden="hidden">Next ►</button>
+					</div>
+				</div>
+				<div class="modal-body" id="no-query-modal-body" hidden="hidden">
+					<p>Please draw a connected graph to view query result.</p>
+				</div>
+				<div class="modal-body" id="no-result-modal-body" hidden="hidden">
+					<p>No result found!</p>
+				</div>
+			</div>
+		</div>
+			<div class="row col-md-12" style="margin: 0px; padding-left: 15px; margin-top:0px;">
+			<div class="col-md-5"></div>
+			<a class="col-md-2" style="background-color: white; padding: 10px;" href="https://xxx.uta.edu" target="_blank"><img class="img-responsive" id="uta_logo_1" src="images/xxx_logo.png" alt="XYZ Logo" height="120px" width="150px" style="margin-left: auto; background-color: #FFF;  margin-right:auto; display: block; height: 60px; width:190px;"></a>
+			<!--</div>-->
+			</div>
+
+
+			<div id="myModal2" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header" style="height:50px;font-family:Segoe UI;font-size:15px;">
+							<button type="button" class="close" data-dismiss="modal" style="font-family:Segoe UI;font-size:15px;">close</button>
+							<h4 class="modal-title modalTitle">Alert!</h4>
+						</div>
+						<div class="modal-body">
+							<p name="message" id="message" class="modalMessage" style="text-align:center;font-size:15px;font-family:Segeo UI;"><strong>The system was unable to find any edge between these nodes! Please try adding an edge between a different pair of nodes.</strong></p>
+						</div>
+						<div class="modal-footer" style="margin:10px; padding:5px;">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" style="text-align:center;font-size:15px;font-family:Segeo UI;">Close</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div id="myModalPossibleActions" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content" style="width:700px;opacity:0.9;">
+						<div class="modal-header" style="height:50px;font-family:Segoe UI;font-size:15px;">
+							<button type="button" class="close" data-dismiss="modal" style="font-family:Segoe UI;font-size:15px;">close</button>
+							<h4 class="modal-title modalTitle">Possible Actions</h4>
+						</div>
+						<div class="modal-body">
+							<img width="670px" id="imgPossibleActions" src="images/case1.PNG"/>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<div id="finalThankYouModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content" style="opacity:0.9;">
+						<div class="modal-header" style="height:50px;font-family:Segoe UI;font-size:15px;">
+							<button type="button" id="finalCloseButton" class="close"  style="font-family:Segoe UI;font-size:15px;">close</button>
+							<h4 class="modal-title modalTitle">Thank You</h4>
+						</div>
+						<div class="modal-body">
+						<div class="termsCondition">
+
+			<ul class="UL" style="padding:10px; border: solid 2px #d3d3d3; font-family:Segoe UI; text-align:justify;">
+					<p><h4>	   Thank you for participating in user study!</h4></p>
+					</ul></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<div id="myModal3" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header" style="height:50px;font-family:Segoe UI;font-size:15px;">
+							<button type="button" class="close" data-dismiss="modal" style="font-family:Segoe UI;font-size:15px;">close</button>
+							<h4 class="modal-title modalTitle">Alert!</h4>
+						</div>
+						<div class="modal-body">
+							<p name="message" id="message" class="modalMessage" style="text-align:center;font-size:16px;font-family:Segoe UI;"><strong>No Candidates!</strong></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" style="text-align:center;font-size:15px;font-family:Segeo UI;">Close</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+			<div id="myModal4" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header" style="height:50px;font-family:Segoe UI;font-size:15px;">
+							<button type="button" class="close" data-dismiss="modal" style="font-family:Segoe UI;font-size:15px;">close</button>
+							<h4 class="modal-title modalTitle">Alert!</h4>
+						</div>
+						<div class="modal-body">
+							<p name="message" id="message" class="modalMessage" style="text-align:center;font-size:16px;font-family:Segoe UI;">Switch to <strong>Locked Mode</strong> to create a new node!</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" style="text-align:center;font-size:15px;font-family:Segeo UI;">Close</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+			<div id="myModal5" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header" style="height:50px;font-family:Segoe UI;font-size:15px;">
+				<button type="button" class="close" data-dismiss="modal" style="font-family:Segoe UI;font-size:15px;">close</button>
+				<h4 class="modal-title modalTitle">Server Down!</h4>
+			</div>
+			<div class="modal-body">
+				<p name="message" id="message" class="modalMessage" style="text-align:center;font-family:Segoe UI;"><strong>Oops! Orion is currently under maintenance. Please try again later!</strong></p>
+			</div>
+			<div class="modal-footer" style="margin:10px; padding:5px;">
+				<button type="button" class="btn btn-primary" data-dismiss="modal" style="text-align:center;font-family:Segoe UI;font-size:15px;">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+
+		<!-- </div>   -->
+	<!-- </div> -->
+	</body>
+
+
+
+
+<!-- sample initialization -->
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/d3.min.js"></script>
+
+	<script src="js/app1.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+
+<script src="js/mootools-1.2.1-core-yc.js" type="text/javascript" charset="utf-8"></script>
+<!-- required for TextboxList -->
+<script src="js/GrowingInput.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/TextboxList.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/TextboxList.Autocomplete.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/TextboxList.Autocomplete.Binary.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- sample initialization -->
+
+
+	<!--<script src="js/bootstrap-modalmanager.js"></script>
+	<script src="js/bootstrap-modal.js"></script>-->
+
+<!--
+<script type="text/javascript">
+
+
+
+</script> -->
+
+<script type="text/javascript" charset="utf-8">
+	window.addEvent('load', function(){
+		// Autocomplete with poll the server as you type
+		/*    var t5 = new TextboxList('form_tags_input_4', {unique: true, plugins: {autocomplete: {
+					 minLength: 3,
+				 queryRemote: true,
+					remote: {url: 'https://[server_name]:8080/greeting'}
+				 }}});
+		 t5.add('tag 2');*/
+		 createEntityTextboxList();
+	 });
+ </script>
+		<!-- sample style -->
+	<style type="text/css" media="screen">
+	.form_tags { margin-bottom: 10px; }
+
+	/* Setting widget width examp
+
+	 /* Preloader for autocomplete */
+	.textboxlist-loading { background: url('images/spinner.gif') no-repeat 380px center; }
+
+	 /* Autocomplete results styling */
+	 .form_friends .textboxlist-autocomplete-result { overflow: hidden; zoom: 1; }
+	 .form_friends .textboxlist-autocomplete-result img { float: left; padding-right: 10px; }
+
+	 .note { color: #666; font-size: 90%; }
+	 #footer { margin: 50px; text-align: center; }
+
+
+
+ </style>
+
+
+
+
+
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Orion</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/editor.css">
+
+
+    <!-- required stylesheet for TextboxList -->
+      <link rel="stylesheet" href="css/TextboxList.css" type="text/css" media="screen" charset="utf-8" />
+    <!-- required stylesheet for TextboxList.Autocomplete -->
+   <link rel="stylesheet" href="css/TextboxList.Autocomplete.css" type="text/css" media="screen" charset="utf-8" />
+
+
+
+
+
+  </head>
+  
+  <body style="background-color: #000; background-image: url(images/Banner-BG_1.png);">
+ <!-- <body style="background-color: #000;">-->
+  	<div class="container-fluid" id="container-div" style="margin-top:5px; margin-left:0px;">
+      
+      <div class=" jumbotron-padding all-round-margins" style="text-align: left; padding-top: 0px; padding-bottom: 0px; background-color: #FFFFFF;">
+          
+
+        <div class="row ">
+
+          <div class="col-md-9">
+             <nav class="navbar navbar-default" role="navigation" style="background-color:#FFFFFF; margin-left: 50px; font-size: 20px;">
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                       <a class="navbar-brand" href="#" style="font-size: 30px; color: #063145; font-family: Florence;"><img class="img-responsive" src="images/Header-logo.png" alt="Orion" width="75px" height="75px"></a>
+
+                    </div>
+
+                </nav>
+          </div>
+
+     <div class="col-md-3">       <nav class="navbar navbar-default" role="navigation" style="background-color:#FFFFFF; margin-left: 50px; font-size: 20px;">
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                      <ul class="nav navbar-nav"><style>                                    
+                                   a:link    {background-color:#FFFFFF; text-decoration:none}</style>                                
+                                               <li class="active"><a href="index.html"><img class="img-responsive" src="images/Home-icon.png" alt="Home" style="padding-left: 25px;"></a></li>                                
+                                              <li><a href="editor.html"><img class="img-responsive" src="images/Editor-icon.png" alt="Editor" style="padding-left: 25px;"><img class=
+"img-responsive" src="images/Top-navigation-selection_1.png" alt=""></a></li>
+
+                      </ul>
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+                </div>
+
+
+      </div> <!-- row -->
+
+
+
+
+     
+      </div>
+      
+      <div class="col-md-2 border container-fluid all-round-margins" style="margin-top: 21px; margin-bottom: 1px; margin-right: 0px; padding-right: 0px; border-radius: 0px;">
+           <div class="col-md-12" id="sideBar"  style="background-color:#fff; margin: 0px; margin-right: 100px; padding-top: 85px; padding-right: 70px; padding-left: 0px;  border: 0px; overflow-y: auto; height: 807px;">
+
+               <div class="row">
+               <div class="col-md-7" id="possible-actions-div" style="background-color:#007bb5; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+                    <h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Possible Actions</h4></div>
+                    <div class="col-md-3" id="possible-actions-plus" style="margin-left: 0px; margin-right: 0px; margin-bottom: 0px; padding-top: 18px; background-color: #007bb5; padding-bottom: 6px; padding-left: 0px;margin-left: 0px; cursor: pointer;">
+                    <a class="button glyphicon glyphicon-plus" id="possible-actions" href="#" style="height: 30px; margin-bottom: 10px; margin-top: 2px; padding-top: 1px; background-color: #007bb5; margin-left: 0px; padding-left: 8px; padding-right: 2px; padding-bottom: 2px; padding-top: 3px;"></a>
+              </div></div>
+
+
+
+               <div class="row">
+               <div class="col-md-7" id="useful-tips-div" style="background-color:#d34836; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+                    <h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Useful Tips</h4></div>
+                    <div class="col-md-3" style="margin-left: 0px; margin-right: 0px; margin-bottom: 0px; padding-top: 18px; background-color: #d34836; padding-bottom: 6px; padding-left: 0px;margin-left: 0px; cursor: pointer;">
+                    <a class="button glyphicon glyphicon-plus" id="useful-tips" href="#" style="height: 30px; margin-bottom: 10px; margin-top: 2px;padding-top: 1px; background-color: #d34836; margin-left: 0px; padding-left: 8px; padding-right: 2px; padding-bottom: 2px; padding-top: 3px;"></a>
+              </div></div>
+
+
+
+               <div class="row">
+               <div class="col-md-7" id="settings-div" style="background-color:#009999; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+                    <h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Orion Settings</h4></div>
+                    <div class="col-md-3" style="margin-left: 0px; margin-right: 0px; margin-bottom: 0px; padding-top: 18px; background-color: #009999; padding-bottom: 6px; padding-left: 0px;margin-left: 0px; cursor: pointer;">
+                    <a class="button glyphicon glyphicon-plus" id="settings" href="#" style="height: 30px; margin-bottom: 10px; margin-top: 2px; padding-top: 1px; background-color: #009999; margin-left: 0px; padding-left: 8px; padding-right: 2px; padding-bottom: 2px; padding-top: 3px;"></a>
+              </div></div>
+
+
+               <div class="row">
+               <div class="col-md-7" id="edge-types-div" style="background-color:#FF7519; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+                    <h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Edge Types</h4></div>
+                    <div class="col-md-3" style="margin-left: 0px; margin-right: 0px; margin-bottom: 0px; padding-top: 18px; background-color: #FF7519; padding-bottom: 6px; padding-left: 0px;margin-left: 0px; cursor: pointer;">
+                    <a class="button glyphicon glyphicon-plus" id="edge-types" href="#" style="height: 30px; margin-bottom: 10px; margin-top: 2px; padding-top: 1px; background-color: #FF7519; margin-left: 0px; padding-left: 8px; padding-right: 2px; padding-bottom: 2px; padding-top: 3px;"></a>
+              </div></div>
+
+
+
+               <!--<div class="row">
+               <div class="col-md-7" style="background-color:#CC4040; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+                    <h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Submit/ Clear</h4></div>
+                    <div class="col-md-3" style="margin-left: 0px; margin-right: 0px; margin-bottom: 0px; padding-top: 18px; background-color: #CC4040; padding-bottom: 6px; padding-left: 0px;margin-left: 0px; cursor: pointer;">
+                    <a class="button glyphicon glyphicon-plus" id="submit-clear" href="#" style="height: 30px; margin-bottom: 10px; margin-top: 2px; padding-top: 1px; background-color: #CC4040; margin-left: 0px; padding-left: 8px; padding-right: 2px; padding-bottom: 2px; padding-top: 3px;"></a>
+              </div></div>-->
+
+
+               <div class="row">
+               <div class="col-md-10" style="background-color:#CC4040; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+                    <a href="survey.html" target="_blank">
+                    <h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Submit/<br>Survey</h4></a></div>
+              </div>
+
+
+               <div class="row">
+               <div class="col-md-10" id="clear-button" style="background-color:#00A47B; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+	          <h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Clear <br>Canvas</h4></div>
+              </div>
+
+
+
+               <!--<div style="background-color:#d34836; padding: 1px; margin: 1px; text-align: center;">
+                    <h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF;">Possible Actions</h4>
+                    <p style="margin-left: 50px; margin-right: 50px; margin-bottom: 10px;">
+                    <a class="button glyphicon glyphicon-plus" id="possible-actions" href="#" style="height: 30px;"></a></p>
+               </div>
+               <div style="background-color:#009999; padding: 1px; margin: 1px; text-align: center;">
+                    <h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF;">Useful Tips</h4>
+                    <p style="margin-left: 50px; margin-right: 50px; margin-bottom: 10px; style="height: 30px;">
+                    <a class="button glyphicon glyphicon-plus" id="useful-tips" href="#"></a></p>
+               </div>
+               <div style="background-color:#FF7519; padding: 1px; margin: 1px; text-align: center;">
+                    <h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF;">Settings</h4>
+                    <p style="margin-left: 50px; margin-right: 50px; margin-bottom: 10px; style="height: 30px;">
+                    <a class="button glyphicon glyphicon-plus" id="settings" href="#"></a></p>
+               </div>
+               <div style="background-color:#CC4040; padding: 1px; margin: 1px; text-align: center;">
+                    <h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF;">Submit/Clear</h4>
+                    <p style="margin-left: 50px; margin-right: 50px; margin-bottom: 10px;" style="height: 30px;">
+                    <a class="button glyphicon glyphicon-plus" id="submit-clear" href="#"></a></p>
+               </div>-->
+        </div>
+      </div>
+
+      <div class="col-md-10 border container-fluid all-round-margins" id="app-body" style="margin-top: 21px; margin-bottom: 1px; margin-left: 0px; padding-left: 0px;" >
+          <div class="panel graph" id="svg-div" style="margin: 0px; border-radius: 0px;">
+        </div>
+      </div>
+
+
+
+<div class='wrap' id="wrap2" >
+  <button type="button" class="close" aria-hidden="true" id="wrap2-x-button" style="font-size: 15px;">close</button>
+  <div class='content'>
+    <h2>Useful Tips</h2>
+
+                     <p>To <b>add a new node</b>, click on empty space in the canvas. Use the dialog box that pops up to set the node's value to either a type or an entity.</p>
+                     <p>To <b>add a new edge</b> between two nodes, hold down the shift key, click on one node and drag to the other node. Select the edge value from the dialog box that pops up.</p>
+                     <p>To <b>re-position a node</b>, click and drag the node around.</p>
+                     <p>To <b>remove a node</b>, select the node by clicking on it and press the Delete button.</p>
+                     <p>To <b>edit a node's value</b>, double click on the node and use the dialog box that pops up to change the value.</p>
+                     <p>To <b>remove an edge</b>, select the edge by clicking on it and press the Delete button.</p>
+                      <p>When the <b>Reverse Role</b> button is displayed in the Edge Types/Reverse Role panel, clicking on it reverses the role of the two ends of the selected edge.</p>
+                      <p>When the <b>Add Edge</b> button is displayed in the Edge Types/Reverse Role panel, click on it to add two new grey edge instances of the selected edge, one on each node of the edge's ends.</p>
+  </div>
+</div>
+
+
+<div class='wrap' id="wrap1" >
+  <button type="button" class="close" aria-hidden="true" id="wrap1-x-button" style="font-size: 15px;">close</button>
+  <div class='content' id="actions">
+    <h2>Possible Actions</h2>
+        <ul id="active-help" style= "margin-left: 10px; margin-right: 10 px; padding: 0px; margin-bottom: 10px; margin-top: 0px; list-style-type: none; font-family: Segoe UI; font-size: 14px; line-height: 2.0;" >
+             <li class="li-animation"><b>Click</b> on the canvas to add a new node.</li>
+        </ul>
+         <input type="checkbox" id="possible-actions-box" value="1" style="margin-left: 10px;"><i style="margin-left: 5px; font-size: 13px; font-family: Segoe UI; padding-top: 0px;">Do not show this message again.</i>
+  </div>
+</div>
+
+
+<div class='wrap' id="wrap3" >
+  <button type="button" class="close" aria-hidden="true" id="wrap3-x-button" style="font-size: 15px;">close</button>
+  <div class='content'>
+    <h2>Settings</h2>
+          <div style="background-color: #a4e8ff; padding-top: 20px; padding-bottom: 20px; border-radius: 8px; margin-left: 35px;">
+              <p style=" display: inline; padding-left: 35px; font-family: Segoe UI; font-size: 14px;">New Suggestions</p>
+              <select class="form-control wrapper" id="suggestion-options" style="display: inline; width: 22%; padding-left: 20px; margin-left: 10px; padding-left: 5px;">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option selected="selected" value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+              </select>
+           </div>
+  </div>
+</div>
+
+
+
+
+<div class='wrap' id="wrap4" >
+  <button type="button" class="close" aria-hidden="true" id="wrap4-x-button" style="font-size: 15px;">close</button>
+  <div class='content'>
+    <h2>Edge Types</h2>
+
+    <p>Click on an edge to view its source type and destination type.</p>
+    <ul id="active-examples" style="font-size: 12px; font-family: Segoe UI; margin-top: 0px; margin-bottom: 10px; margin-left: 15px; margin-right: 10px; padding: 0px; line-height: 1.5">
+    </ul>
+    <button type="button" class="btn btn-primary" id="Add-Edge-button" style="border-radius: 8px; border: none; display: none; margin-bottom: 10px;margin-left: 15px;">Add Edge</button>
+    <button type="button" class="btn btn-primary" id="Reverse-button" style="border-radius: 8px; border: none; margin-left:20px; margin-bottom: 10px;display:none;">Reverse Role</button>
+  </div>
+</div>
+
+
+
+
+
+<!--<div class='wrap' id="wrap5" >
+  <div class='content'>
+    <h2>Submit/Clear</h2>
+          <div style="background-color: #f2cdcd; padding-top: 20px; padding-bottom: 20px; border-radius: 8px; margin-left: 35px;">
+              <p style=" display: inline; padding-left: 35px; font-family: Segoe UI; font-size: 15px;">Take Survey</p>
+              <button class="btn btn-primary button-position" style="border-radius: 8px; margin-left: 10px;"><a href="survey.html" target="_blank"><style>
+                                    a:link    {color:white; text-decoration:none}
+                                    a:visited {color:white; text-decoration:none}
+                                    a:hover   {color:white; text-decoration:none}
+                                    a:active  {color:white; text-decoration:none}
+                             </style>Survey</a></button>
+              <p style=" display: inline; padding-left: 35px; font-family: Segoe UI; font-size: 15px;">Clear Graph</p>
+              <button class="btn btn-primary button-position"  id="clear-button" style= "margin-left: 10px; border-radius: 8px;">Clear</button>
+          </div>
+   </div>
+</div>-->
+
+
+
+      <div class="modal fade" id="loading" data-backdrop="static" data-keyboard="false" style="top:300px;">
+          <div class="modal-dialog" style="opacity:0.7; width: 140px;">
+            <div class="modal-content">
+                <div class ="modal-body">
+	             <img src="images/ajax-loader.gif" id="loading-indicator" style="display:none; opacity: 1;" />
+        	</div>
+            </div>
+	  </div>
+      </div>
+
+
+      
+      <div class="modal fade" id="nodeEditModal" data-backdrop="static" data-keyboard="false" style="font-family: segoe UI;">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="node-edit-x-button" style="font-size: 15px;">close</button>
+                      <h4 class="modal-title" id="node-edit-modal-title">Edit Node</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="var-count border-position border" id ="node-edit-border" style="display: none; padding-bottom: 0px; margin-bottom: 0px;">
+                      <div id="node-edit-selectDiv">
+                       <div id="node-edit-type" style="display: none;" class="row">
+                           <p class="col-md-3" style="margin-top: 0px; padding-top: 2px; text-align: right;"> <b>Type </b> </p>
+                                <select class="form-control wrapper col-md-8" id="node-edit-type-options" style="width: 57%; overflow: auto;">
+                                    <option value="Select Name" >Select Type...</option>
+                                </select>
+                       </div>
+                       <div id ="node-edit-entity-search" class="row" style="display: none;">
+                            <p class="col-md-3" style ="margin-top: 0px; text-align: right;"> <b>Entity Search </b> </p>
+                            <input type="text" name="test6" value="" id="form_tags_input_6" autocomplete="off" style="display: none;">
+                             <div style="height: 7px;"></div>
+                       </div>
+                       <div id="node-edit-entity" style="display: none; margin-top: 12px;" class="row">
+                            <p class="col-md-3" style="margin-top: 0px; text-align: right;"> <b>Entity </b> </p>
+                            <select class="form-control wrapper col-md-8" id="node-edit-entity-options" style="width: 57%; overflow: auto;">
+                                <option value="Select Name" >Select Entity...</option>
+                            </select>
+                            <button type = "button" id="node-edit-entity-back" style="background-color: white; padding: 4px 6px; margin-left:5px;border: 0px;">&#9668</button>
+                            <button type = "button" id="node-edit-entity-next" style="background-color: white; padding: 4px 6px; border: 0px;">&#9658</button>
+                       </div>
+                     </div>
+                    </div>
+		 </div>
+                 <div class="modal-footer" style="border-color: #063145; padding-bottom: 0px; margin-bottom: 20px; margin-left: 20px; margin-right: 20px; margin-top: 5px;">
+                    <button type="button" class="btn btn-primary" id="node-edit-save-changes" style="width: 75px;">Save</button>
+                   <!-- <button type="button" class="btn btn-primary" id="node-edit-show-instructions" style="width: 75px;">Help</button>-->
+                 </div>
+             </div><!-- /.modal-content -->
+         </div><!-- /.modal-dialog -->
+     </div><!-- /.modal -->
+
+       
+
+        <div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false" style="font-family: segoe UI;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header" style="height: 40px; padding-top: 1px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="x-button" style="font-size: 15px; padding-top: 10px;">close</button>
+                <h4 class="modal-title" id="modal-title"></h4>
+              </div>
+              <div class="modal-body">
+                <div id="modal-text">
+
+                </div>
+                <div id='selectDiv'>
+                  <div id="edge-div" style ="display: none;">
+                    <div class="row">
+                      <div class="row" style="padding-bottom: 5px;">
+                        <p class="col-md-3" style="margin-left: 15px; text-align: right; margin-top: 4px;"> <b>Edge Label:</b> </p>
+                        <select class="form-control wrapper col-md-8" id="edge-options" style="width: 57%;">
+                          <option value="Select Name" id="add-value-1" >select Edge...</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                <div id="domain-div" style ="display: none; padding-top: 5px;" class="row">
+                        <p class="col-md-3" style="margin-top: 3px; text-align: right;"> <b>Domain </b></p> 
+                        <select class="form-control wrapper" id="domain-options" style="width: 62%; margin-bottom: 14px; padding: 0px; margin-top: -2px;">
+                          <option value="Select Name" >Select Domain...</option>
+                        </select>
+                      </div>
+
+
+               <div class="var-count border-position border" id ="type-border" style="background-color: #eaf9ff; padding-top: 5px; padding-bottom: 15px; margin-left: 0px; padding-left: 0px; margin-bottom: 4px;">
+                    <div id ="type-keyword-div" class="row">
+                        <div class="col-md-3"></div>
+                        <p><input type="text" id="type-selected" style ="display: none; border-radius: 8px; height: 25px; text-align: center; background-color:#80CCCC;border-width:0px;color:#063145; margin-bottom: 3px; margin-top:8px;" disabled="disabled">
+                        <input type="text" id="type-selected-value" value="-1" style="display:none;">
+                         <button type="button" class="close-icon" id="type-x-button" style="display:none">×</button></p>
+                        <p class="col-md-3" style ="margin-top: 0px; text-align: right;"> <b>Type Search </b> </p>
+                        <input type="text" name="test5" value="" id="form_tags_input_5" autocomplete="off" style="display: none;">
+                        <div style="height: 7px;"></div>
+                      </div>
+
+                     <div id="type-div" style ="display: none; margin-top: 7px;" class="row">
+                        <p class="col-md-3" style="margin-top: 0px; text-align: right;"> <b>Type </b> </p>
+                        <select class="form-control wrapper col-md-8" id="type-options" style="width: 57%; overflow:auto;">
+                          <option value="Select Name" >Select Type...</option>
+                        </select>
+                        <button type = "button" id="type-back" style="background-color: transparent; padding: 4px 6px; margin-left:5px; border: 0px;">&#9668</button>
+                        <button type = "button" id="type-next" style="background-color: transparent; padding: 6px 6px; border: 0px;">&#9658</button>
+                      </div>
+                </div>  
+
+
+
+               <div class="var-count border-position border" id="entity-border" style="padding-top: 0px; margin-top: 0px; padding-bottom: 5px;">
+                 <div id ="keyword-div" class="row">
+                        <div class="col-md-3"></div>
+                        <p><input type="text"  id="entity-selected" style ="display: none;border-radius: 8px; height: 25px; text-align: center; background-color: #80CCCC; border-width: 0px; color: #063145; margin-bottom: 2px; margin-top: 10px; disabled="disabled">
+                        <input type="text" id="entity-selected-value" value="-1" style="display:none;">
+                        <button type="button" class="close-icon" id="entity-x-button" style="display:none;">×</button></p>
+                        <p class="col-md-3" style ="margin-top: 0px; text-align: right"> <b>Entity Search:</b> </p>
+                        <input type="text" name="test4" value="" id="form_tags_input_4" autocomplete="off" style="display: none;">
+                </div>
+
+                  <div id="entity-div" style="display: none; margin-top: 7px;" class="row">
+                        <p class="col-md-3" style="margin-top: 2px; text-align: right;"> <b>Entity:</b> </p>
+                        <select class="form-control wrapper col-md-8" id="entity-options" style="width: 57%; overflow: auto;">
+                          <option value="Select Name" >Select Entity...</option>
+                        </select>
+                        <button type = "button" id="entity-back" style="background-color: white; padding: 4px 6px; margin-left:5px; border: 0px;">&#9668</button>
+                        <button type = "button" id="entity-next" style="background-color: white; padding: 4px 6px; border: 0px;">&#9658</button>
+                      </div>
+                </div>
+        
+
+              </div>
+              <div class="modal-footer" style="border-color: #063145; padding-bottom: 0px; margin-bottom: 0px;">
+                <button type="button" class="btn btn-primary" id="save-changes" style="width: 75px; font-size: 16px;">Save</button>
+                <button type="button" class="btn btn-primary" id="show-instructions" style="width: 75px; font-size: 16px;">Help</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+      </div>  
+
+      <!--<div class="col-md-4" style="margin-top: 20px; font-family: Segoe UI; color: #063145; font-size: 14px;">
+        <div style="padding-left:0px; padding-right: 0px; margin-right: 1px; margin-left: -15px;" id="lower-div-examples-reverseRole">
+         <div class="col-md-12" id="sideBar" style="background-color: #67cff1; padding-bottom: 0px; height: 807px; overflow-y: auto; margin-bottom: 0px;">
+           <h4 style="font-family: Segoe UI; padding-top: 8px;">Edge Types / Reverse Role</h4>
+           <div style="background-color: #a4e8ff; padding-top: 15px; padding-bottom: 5px; margin-right: 2px; padding-left: 0px; margin-bottom: 0px; border-radius: 8px;">
+           <p style="font-size: 14px; margin-left: 15px; padding-top: 0px; padding-bottom: 0px; margin-right: 10px; margin-bottom: 10px; line-height: 1.5" id="example-text">   <b>Click</b> on an edge to view its source type and destination type. </p>
+           <ul id="active-examples" style="font-size: 12px; font-family: Segoe UI; margin-top: 0px; margin-bottom: 10px; margin-left: 15px; margin-right: 10px; padding: 0px; line-height: 1.5">
+           </ul>
+           <button type="button" class="btn btn-primary" id="Add-Edge-button" style="border-radius: 8px; border: none; display: none; margin-bottom: 10px;margin-left: 15px;">Add Edge</button>
+           <button type="button" class="btn btn-primary" id="Reverse-button" style="border-radius: 8px; border: none; margin-left:20px; margin-bottom: 10px;display:none;">Reverse Role</button>
+           </div>
+
+
+
+           <div id="lower-div-1" style="padding-top: 15px; ">
+               <h4>Possible Actions</h4>
+               <div id= "possible-actions" style="background-color: #a4e8ff; padding-top: 15px; padding-bottom: 5px; margin-right: 2px; padding-left: 5px; margin-bottom: 0px; border-radius: 8px;">
+               <ul id="active-help" style= "margin-left: 10px; margin-right: 10 px; padding: 0px; margin-bottom: 10px; margin-top: 0px; list-style-type: none; font-family: Segoe UI; font-size: 14px; line-height: 1.5;" >
+                  <li class="li-animation"><b>Click</b> on the canvas to add a new node.</li>
+                 </ul>
+                </div>
+                
+                <div style="padding-top: 15px;">
+                   <h4>Useful Tips <button type="button" id="useful-tips-hide" style="background-color: transparent; padding-bottom: 5px;; border: 0px; outline: 0px;">&#9658</button></h4>
+
+                   <div id= "useful-tips-list" style="background-color: #a4e8ff; padding-top: 15px; padding-bottom: 5px; margin-right: 2px; padding-left: 5px; margin-bottom: 5px; border-radius: 8px;">
+                   <ul style= "text-align:justify; margin-left: 15px; margin-right: 10 px; padding: 0px; margin-bottom: 10px; margin-top: 0px; list-style-type: none; font-family: Segoe UI; font-size: 14px; line-height: 1.5; padding-right: 10px;" >
+                     <li>To <b>add a new node</b>, click on empty space in the canvas. Use the dialog box that pops up to set the node's value to either a type or an entity.</li>
+                     <li>To <b>add a new edge</b> between two nodes, hold down the shift key, click on one node and drag to the other node. Select the edge value from the dialog box that pops up.</li>
+                     <li>To <b>re-position a node</b>, click and drag the node around.</li>
+                     <li>To <b>remove a node</b>, select the node by clicking on it and press the Delete button.</li>
+                     <li>To <b>edit a node's value</b>, double click on the node and use the dialog box that pops up to change the value.</li>
+                     <li>To <b>remove an edge</b>, select the edge by clicking on it and press the Delete button.</li>
+                      <li>When the <b>Reverse Role</b> button is displayed in the Edge Types/Reverse Role panel, clicking on it reverses the role of the two ends of the selected edge.</li>
+                      <li>When the <b>Add Edge</b> button is displayed in the Edge Types/Reverse Role panel, click on it to add two new grey edge instances of the selected edge, one on each node of the edge's ends.</li>
+                
+                    </ul>
+                  </div>
+                 </div>
+           </div>
+
+
+          <div style="padding-top: 15px; margin-bottom: 15px;" id="lower-div-2">
+              <div class = "col-md-6"  style="background-color: #a4e8ff; padding-top: 20px; padding-bottom: 20px; margin-right: 0px; padding-left: 20px; margin-bottom: 20px; border-radius: 8px; padding-right: 0px;">
+              <button class="btn btn-primary button-position col-md-5" style="border-radius: 8px;"><a href="survey.html" target="_blank"><style>
+                                    a:link    {color:white; text-decoration:none}
+                                    a:visited {color:white; text-decoration:none}
+                                    a:hover   {color:white; text-decoration:none}
+                                    a:active  {color:white; text-decoration:none}
+                             </style>Survey</a></button>
+              <button class="btn btn-primary button-position col-md-5"  id="clear-button" style= "margin-left: 5px; border-radius: 8px;">Clear</button>
+            </div>        
+              <div class ="col-md-6"  style="background-color: #67cff1; padding-top: 0px; padding-bottom: 0px; margin-right: 0px; margin-left: 0px; margin-bottom: 15px; padding-left: 10px; padding-right: 0px; margin-top: 0px;">
+                       <div style="background-color: #a4e8ff; padding-top: 20px; padding-bottom: 20px; border-radius: 8px;">
+                       <p style=" display: inline; padding-left: 10px; font-family: Segoe UI;"><b>New Suggestions</b></p>
+                       <select class="form-control wrapper" id="suggestion-options" style="display: inline; width: 22%; padding: 0px; margin: 0px; padding-left: 5px;">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option selected="selected" value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                       </div>
+              </div>
+           </div>-->
+          </div>
+        </div>
+
+
+  	</div>   <!-- container -->
+    <!-- <div class="container"> -->
+  	<!--<div class="container-fluid" style="margin-top:5px; margin:0px;">-->
+          <div class="row col-md-12" style = "margin: 0px; padding: 0px; margin-top:0px; background-color: #063145;">
+            <div class="col-md-10"></div>
+            <a class="col-md-2" style="background-color: white; padding: 10px;" href="http://www.uta.edu" target="_blank"><img class="img-responsive" id="uta_logo_1" src="images/UTA_Logo_temp.png" alt="XYZ Logo" height="120px" width="150px" style="margin-left: auto; background-color: #FFF;  margin-right:auto; display: block;"></a>
+          <!--</div>-->
+          </div>
+      
+      <!-- </div>   -->
+  <!-- </div> -->
+  </body>
+
+
+
+
+<!-- sample initialization -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/d3.min.js"></script>
+  <script src="js/app1.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+
+<script src="js/mootools-1.2.1-core-yc.js" type="text/javascript" charset="utf-8"></script>
+<!-- required for TextboxList -->
+<script src="js/GrowingInput.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/TextboxList.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/TextboxList.Autocomplete.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/TextboxList.Autocomplete.Binary.js" type="text/javascript" charset="utf-8"></script>
+<!-- sample initialization -->
+
+
+  <!--<script src="js/bootstrap-modalmanager.js"></script>
+  <script src="js/bootstrap-modal.js"></script>-->
+
+<script type="text/javascript" charset="utf-8">
+    window.addEvent('load', function(){
+        // Autocomplete with poll the server as you type
+	  /*    var t5 = new TextboxList('form_tags_input_4', {unique: true, plugins: {autocomplete: {
+	               minLength: 3,
+		       queryRemote: true,
+	                remote: {url: 'http://[server_name]:8080/greeting'}
+		         }}});
+         t5.add('tag 2');*/
+         createEntityTextboxList();
+	 });
+ </script>
+
+
+
+    <!-- sample style -->
+    <style type="text/css" media="screen">
+    .form_tags { margin-bottom: 10px; }
+
+    /* Setting widget width example */
+     .textboxlist { width: 400px; }
+
+     /* Preloader for autocomplete */
+    .textboxlist-loading { background: url('images/spinner.gif') no-repeat 380px center; }
+
+     /* Autocomplete results styling */
+     .form_friends .textboxlist-autocomplete-result { overflow: hidden; zoom: 1; }
+     .form_friends .textboxlist-autocomplete-result img { float: left; padding-right: 10px; }
+
+     .note { color: #666; font-size: 90%; }
+     #footer { margin: 50px; text-align: center; }
+
+ </style>
+
+
+
+
+
+</html>

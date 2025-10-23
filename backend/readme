@@ -1,0 +1,12 @@
+To compile:
+mvn install
+mvn compile
+
+To run:
+./run_server.sh
+
+maven version must be 3.2.1 (or greater?)
+java version must be 1.7
+
+the various files in manifest, webapp (although might be empty) folders are required!
+make sure pom.xml is saved. That is very important for mvn compilation to work.

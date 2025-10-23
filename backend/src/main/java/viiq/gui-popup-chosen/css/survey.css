@@ -1,0 +1,247 @@
+.modalHeader {
+    background-color: #063145;
+    border-top: 1px solid #0d176c;
+    border-bottom: 1px solid #0d176c;
+    border-radius: 5px 5px 0 0;
+    font-family: Segoe UI;
+  }
+.termsCondition{
+border: #343434;
+margin: auto;
+padding: 20px;
+font-family: Segoe UI;
+transition: all 0.5s linear;
+  display: block;
+  font-family: Segoe UI;
+}
+.InitialRead{
+font-family: Segoe UI;
+}
+.UL ul{
+margin: 20px;
+}
+.required{
+border-style: solid;
+border-width: 2px;
+border-color: #bdc3c7;
+-webkit-transition: border-color 0.5s ease-in-out;
+transition: border-color 0.5s ease-in-out;
+border-radius: 3px;
+padding: 10px 10px 9px 2.3em;
+outline: none;
+-o-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: normal;
+font-size: 1em;
+width: 90%;
+background-color:#FFFFFF;
+font-size:14px;
+font-family: Segeo UI;
+}
+
+.ForInputElement{
+  padding: 7px;
+  text-align: center;
+  padding-top: 2px;
+  margin: 10px;
+}
+.OuterDivForButton{
+  padding: 5px;
+  margin-bottom: 30px;
+  display: block;
+}
+.innerDivForButton{
+  padding: 5px;
+  margin: 7px;
+  text-align: center;
+}
+.innerD{
+  padding: 5px;
+  margin:10px;
+  display: inline-block;
+}
+.agree, .decline{
+  margin: 10px;
+  font-family: Segeo UI;
+}
+.checkBoxQuestion{
+  display: block;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.ss-q-title{
+  display: block;
+    margin-bottom: 3px;
+    clear: both;
+}
+.ss-choice-item{
+  line-height: 2.2;
+}
+.questionLabels{
+  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-left: 20px;
+  box-shadow: 2px 2px #f2f2f2;
+  border-radius: 5px;
+  font-family: Segoe UI;;
+  border-bottom: 2px solid #f0f0f0;
+    border-top: 1px solid #70B6E5;
+    border-bottom: 5px solid #2372A7;
+    border-radius: 5px 5px 0 0;
+    color: #000000;
+    letter-spacing: 2px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    font-size: 120%;
+    padding: 10px;
+    padding-left: 20px;
+    background-color: #eaf9ff;
+
+}
+.feedbackQuestion{
+  background-color: #FFFFFF;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  padding: 5px;
+}
+.answerLabels li{
+padding: 5px;
+border-bottom: 1px solid #e3e3e3;
+margin: 7px;
+padding-left: 25px;
+
+}
+.answerLabels{
+  border:1px solid #e3e3e3;
+  font-size: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.42857143;
+font-family: Segoe UI;
+}
+.ss-choice-item-control{
+  margin-right:5px;
+}
+
+.ss-choices{
+  padding-left: 0px;
+}
+.ss-scalenumbers{
+  padding-right: 40px;
+}
+
+.answerLabels li {
+  list-style-type: none;
+}
+
+.answerLabels table {
+padding: 50px;
+margin: 20px;
+/*background-color: #f3f3f3;*/
+border-bottom: #888888;
+}
+.submitButton{
+  text-align: center;
+  padding: 4px;
+  margin: 30px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-family: Segoe UI;
+
+}
+.submitButtonInner{
+width: 30px;
+height: 20px;
+font-family: Segoe UI;
+
+}
+
+.ss-submit{
+  background-color: rgba(74,170,165,0.7);
+}
+
+.IntroPart{
+  background-color: #f3f3f3;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  text-shadow: 4px 4px 4px solid;
+  display: none;
+  border-bottom: 2px solid #888888;
+  font-family: Segoe UI;
+}
+
+.headP{
+  padding: 10px;
+  margin: 20px;
+  margin-bottom: 0px;
+  text-align: center;
+  /*background-color: #f3f3f3;*/
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Segoe UI;
+  font-weight: 700;
+  font-size: 20px;;
+
+}
+
+.headP:before{
+  position: relative;
+    width: 25%;
+    height: 3px;
+    background: #063145;
+    display: block;
+    content: '';
+    top: 12px;
+    left: 0%;
+}
+
+.headP:after{
+  position: relative;
+    width: 25%;
+    height: 3px;
+    background: #063145;
+    display: block;
+    content: '';
+    left: 75%;
+top: -11px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visuallyhidden {
+  opacity: 0;
+}
+
+#FillForm{
+          border: 1px solid #337ab7;
+          padding: 7px;
+}
+
+.btn-primary{
+  background-color: #2ea2cc;
+}
+
+.btn-primary:hover{
+  background-color: #003366;
+}
+
+.Query_id {
+padding: 20px;
+}
+
+textarea{
+padding : 5px;
+width : 100%;
+margin :2px;
+}
+
+.textareaField{
+text-align: center;
+}

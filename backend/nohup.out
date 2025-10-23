@@ -1,0 +1,2845 @@
+Loading type to edge list map, for source types
+Loading type to edge list map, for object types
+Loading edge type file
+Populating intermediate nodes
+loading the concatenated property mapping list
+Load data for finding the number of instances associated with each type
+Load data for Wikipedia Preview
+Load edge labels
+Load node labels
+learn decision forest model
+Done learning the decision forest model
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.2.1.RELEASE)
+
+2020-04-17 17:43:30.883  INFO 10541 --- [           main] viiq.SpringServer                        : Starting SpringServer v1.0-SNAPSHOT on [server_name] with PID 10541 (/mounts/[server_name]/proj/orion/backend/target/src-maven-1.0-SNAPSHOT.jar started by root in /mounts/[server_name]/proj/orion/backend)
+2020-04-17 17:43:30.924  INFO 10541 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@706a04ae: startup date [Fri Apr 17 17:43:30 CDT 2020]; root of context hierarchy
+2020-04-17 17:43:31.586  INFO 10541 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2020-04-17 17:43:32.455  INFO 10541 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2020-04-17 17:43:32.773  INFO 10541 --- [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2020-04-17 17:43:32.775  INFO 10541 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.15
+2020-04-17 17:43:32.906  INFO 10541 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-17 17:43:32.907  INFO 10541 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1988 ms
+2020-04-17 17:43:51.134  INFO 10541 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2020-04-17 17:43:51.139  INFO 10541 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-04-17 17:43:51.139  INFO 10541 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'simpleCORSFilter' to: [/*]
+2020-04-17 17:43:51.140  INFO 10541 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-04-17 17:43:57.946  INFO 10541 --- [ost-startStop-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [6,804] milliseconds.
+2020-04-17 17:43:58.246  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@706a04ae: startup date [Fri Apr 17 17:43:30 CDT 2020]; root of context hierarchy
+2020-04-17 17:43:58.315  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getnewquery],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String viiq.SpringClient.getRandomQuery()
+2020-04-17 17:43:58.316  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/gettypes],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.ArrayList<java.lang.String> viiq.SpringClient.getTypess(int,java.lang.String,int,int)
+2020-04-17 17:43:58.316  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getwikisummary],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String viiq.SpringClient.getWikiSummary(int)
+2020-04-17 17:43:58.316  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/gettypesss],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.ArrayList<java.lang.String> viiq.SpringClient.getTypesss(int)
+2020-04-17 17:43:58.317  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/geteditnode],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.ArrayList<java.lang.String> viiq.SpringClient.getNodeEditValues(int,int,int,java.lang.String,java.lang.String)
+2020-04-17 17:43:58.317  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getnodetypevalues],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.ArrayList<java.lang.String> viiq.SpringClient.getNodeTypeValues(int,java.lang.String)
+2020-04-17 17:43:58.318  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/gettypesforentity],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.ArrayList<java.lang.String> viiq.SpringClient.getTypesForEntity(int)
+2020-04-17 17:43:58.318  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getexamples],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public viiq.clientServer.client.EdgeExamplesResponseObject viiq.SpringClient.getExamplesGet(int,int,int)
+2020-04-17 17:43:58.318  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/greeting],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<viiq.clientServer.client.BackendResponseObject> viiq.SpringClient.post(viiq.clientServer.server.GUIRequestObject)
+2020-04-17 17:43:58.319  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getentities],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.ArrayList<java.lang.String> viiq.SpringClient.getEntities(int,int,java.lang.String,int,int)
+2020-04-17 17:43:58.319  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/greeting],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.ArrayList<java.lang.String> viiq.SpringClient.get()
+2020-04-17 17:43:58.321  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2020-04-17 17:43:58.322  INFO 10541 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-17 17:43:58.352  INFO 10541 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-17 17:43:58.352  INFO 10541 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-17 17:43:58.396  INFO 10541 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-17 17:43:58.475  INFO 10541 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2020-04-17 17:43:58.534  INFO 10541 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2020-04-17 17:43:58.536  INFO 10541 --- [           main] viiq.SpringServer                        : Started SpringServer in 27.965 seconds (JVM running for 217.368)
+2020-04-17 17:44:02.070  INFO 10541 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-04-17 17:44:02.070  INFO 10541 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2020-04-17 17:44:02.088  INFO 10541 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 2
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 55
+Input parameters for GET request /getentities :
+domain = 2
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 2029
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 2029
+keyword = tru
+windowNumber = 0
+windowSize = 100
+low = 53148741 high = 53419470
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 2029
+keyword = true
+windowNumber = 0
+windowSize = 100
+low = 53148741 high = 53419470
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 2029
+keyword = true
+windowNumber = 0
+windowSize = 100
+low = 53148741 high = 53419470
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 2029
+keyword = true gr
+windowNumber = 0
+windowSize = 100
+low = 53148741 high = 53419470
+low = 42442016 high = 42669195
+low = 26229065 high = 26385222
+low = 16413877 high = 16508548
+low = 10149914 high = 10204749
+low = 6368729 high = 6399036
+done 4
+Input parameters for GET request /getentities :
+domain = -1
+type = 2029
+keyword = true gri
+windowNumber = 0
+windowSize = 100
+low = 53148741 high = 53419470
+low = 42442016 high = 42669195
+low = 26229065 high = 26385222
+low = 16413877 high = 16508548
+low = 10149914 high = 10204749
+low = 6368729 high = 6399036
+done 4
+Input parameters for GET request /getentities :
+domain = -1
+type = 2029
+keyword = true grit
+windowNumber = 0
+windowSize = 100
+low = 53148741 high = 53419470
+low = 42442016 high = 42669195
+low = 26229065 high = 26385222
+low = 16413877 high = 16508548
+low = 10149914 high = 10204749
+low = 6368729 high = 6399036
+done 4
+Input parameters for GET request /gettypes :
+nodeid = 33998906
+Input parameters for GET request /gettypes :
+nodeid = 37136414
+Input parameters for GET request /gettypes :
+nodeid = 37136414
+Input parameters for GET request /gettypes :
+nodeid = 33998906
+Input parameters for GET request /gettypes :
+nodeid = 37136414
+Input parameters for GET request /getentities :
+domain = -1
+type = 2029
+keyword = true grit
+windowNumber = 0
+windowSize = 100
+low = 53148741 high = 53419470
+low = 42442016 high = 42669195
+low = 26229065 high = 26385222
+low = 16413877 high = 16508548
+low = 10149914 high = 10204749
+low = 6368729 high = 6399036
+done 4
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 6
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = 6
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 2028
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 6
+Input parameters for GET request /getentities :
+domain = -1
+type = 1234
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 1
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = ind
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 14
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = indi
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 8
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = india
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 6
+Input parameters for GET request /gettypes :
+nodeid = 11606621
+Input parameters for GET request /gettypes :
+nodeid = 41073547
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = india
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 6
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 6
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = 6
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 6
+keyword = cou
+windowNumber = 0
+windowSize = 100
+low = 159 high = 334
+low = 135 high = 299
+low = 60 high = 132
+low = 13 high = 29
+done 15
+Input parameters for GET request /gettypes :
+domain = 6
+keyword = coun
+windowNumber = 0
+windowSize = 100
+low = 159 high = 334
+low = 135 high = 299
+low = 60 high = 132
+low = 13 high = 29
+done 15
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = ind
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 14
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = indi
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 8
+Input parameters for GET request /gettypes :
+nodeid = 11606621
+Input parameters for GET request /gettypes :
+nodeid = 41073547
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 27
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 31
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom h
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom han
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+low = 18868489 high = 22207386
+low = 11574544 high = 12257413
+low = 7298143 high = 7401809
+low = 4431295 high = 4464166
+low = 2751143 high = 2763344
+done 47
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom hank
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+low = 18868489 high = 22207386
+low = 11574544 high = 12257413
+low = 7298143 high = 7401809
+low = 4431295 high = 4464166
+low = 2751143 high = 2763344
+done 6
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom hanks
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+low = 18868489 high = 22207386
+low = 11574544 high = 12257413
+low = 7298143 high = 7401809
+low = 4431295 high = 4464166
+low = 2751143 high = 2763344
+done 2
+Input parameters for GET request /gettypes :
+nodeid = 10953771
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 27
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 31
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom h
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom han
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+low = 18868489 high = 22207386
+low = 11574544 high = 12257413
+low = 7298143 high = 7401809
+low = 4431295 high = 4464166
+low = 2751143 high = 2763344
+done 47
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom hank
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+low = 18868489 high = 22207386
+low = 11574544 high = 12257413
+low = 7298143 high = 7401809
+low = 4431295 high = 4464166
+low = 2751143 high = 2763344
+done 6
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom hanks
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+low = 18868489 high = 22207386
+low = 11574544 high = 12257413
+low = 7298143 high = 7401809
+low = 4431295 high = 4464166
+low = 2751143 high = 2763344
+done 2
+Input parameters for GET request /gettypes :
+nodeid = 10953771
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = indi
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 8
+Input parameters for GET request /gettypes :
+nodeid = 44475906
+Input parameters for GET request /gettypes :
+nodeid = 41073547
+Input parameters for GET request /gettypes :
+nodeid = 31632127
+Input parameters for GET request /gettypes :
+nodeid = 11606621
+Input parameters for GET request /gettypes :
+nodeid = 0
+Input parameters for GET request /gettypes :
+nodeid = 11606621
+Input parameters for GET request /gettypes :
+nodeid = 31632127
+Input parameters for GET request /gettypes :
+nodeid = 15337272
+Input parameters for GET request /gettypes :
+nodeid = 4250490
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom hanks
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+low = 18868489 high = 22207386
+low = 11574544 high = 12257413
+low = 7298143 high = 7401809
+low = 4431295 high = 4464166
+low = 2751143 high = 2763344
+done 2
+Input parameters for GET request /gettypes :
+domain = 6
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = 6
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = uni
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 29
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = unite
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 24
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = unite
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 24
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = unite s
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 1
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = unite
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 24
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = unite
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 24
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = united
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 24
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = united
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 24
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = united s
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 13
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = united st
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 13
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = united sta
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 13
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = united state
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 13
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = united states
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 13
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = united states
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 13
+Input parameters for GET request /gettypes :
+nodeid = 15357522
+Input parameters for GET request /gettypes :
+nodeid = 18897171
+Input parameters for GET request /gettypes :
+nodeid = 36353380
+Input parameters for GET request /gettypes :
+nodeid = 40663229
+Input parameters for GET request /gettypes :
+nodeid = 40832234
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = indi
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 8
+Input parameters for GET request /getentities :
+domain = -1
+type = 1365
+keyword = tom hanks
+windowNumber = 0
+windowSize = 100
+low = 22723586 high = 26147537
+low = 18868489 high = 22207386
+low = 11574544 high = 12257413
+low = 7298143 high = 7401809
+low = 4431295 high = 4464166
+low = 2751143 high = 2763344
+done 2
+Input parameters for GET request /gettypes :
+nodeid = 10953771
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = indi
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 8
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = united states
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 13
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = indi
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 8
+Input parameters for GET request /gettypes :
+domain = 53
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 35
+Input parameters for GET request /getentities :
+domain = 53
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = aca
+windowNumber = 0
+windowSize = 100
+low = 14129576 high = 14147805
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = acad
+windowNumber = 0
+windowSize = 100
+low = 14129576 high = 14147805
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = acade
+windowNumber = 0
+windowSize = 100
+low = 14129576 high = 14147805
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = academ
+windowNumber = 0
+windowSize = 100
+low = 14129576 high = 14147805
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = academy
+windowNumber = 0
+windowSize = 100
+low = 14129576 high = 14147805
+done 101
+Input parameters for GET request /gettypes :
+nodeid = 36160169
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = tom
+windowNumber = 0
+windowSize = 100
+low = 14129576 high = 14147805
+low = 12067652 high = 12085781
+low = 7293962 high = 7311121
+low = 4533967 high = 4549682
+low = 2774217 high = 2788480
+low = 1721124 high = 1733465
+done 18
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = tom
+windowNumber = 0
+windowSize = 100
+low = 14129576 high = 14147805
+low = 12067652 high = 12085781
+low = 7293962 high = 7311121
+low = 4533967 high = 4549682
+low = 2774217 high = 2788480
+low = 1721124 high = 1733465
+done 18
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = tom h
+windowNumber = 0
+windowSize = 100
+low = 14129576 high = 14147805
+low = 12067652 high = 12085781
+low = 7293962 high = 7311121
+low = 4533967 high = 4549682
+low = 2774217 high = 2788480
+low = 1721124 high = 1733465
+done 1
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = tom han
+windowNumber = 0
+windowSize = 100
+low = 14129576 high = 14147805
+low = 12067652 high = 12085781
+low = 7293962 high = 7311121
+low = 4533967 high = 4549682
+low = 2774217 high = 2788480
+low = 1721124 high = 1733465
+done 1
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = tom hank
+windowNumber = 0
+windowSize = 100
+low = 14129576 high = 14147805
+low = 12067652 high = 12085781
+low = 7293962 high = 7311121
+low = 4533967 high = 4549682
+low = 2774217 high = 2788480
+low = 1721124 high = 1733465
+done 1
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = tom hanks
+windowNumber = 0
+windowSize = 100
+low = 14129576 high = 14147805
+low = 12067652 high = 12085781
+low = 7293962 high = 7311121
+low = 4533967 high = 4549682
+low = 2774217 high = 2788480
+low = 1721124 high = 1733465
+done 1
+Input parameters for GET request /getentities :
+domain = -1
+type = 758
+keyword = tom hanks
+windowNumber = 0
+windowSize = 100
+low = 14129576 high = 14147805
+low = 12067652 high = 12085781
+low = 7293962 high = 7311121
+low = 4533967 high = 4549682
+low = 2774217 high = 2788480
+low = 1721124 high = 1733465
+done 1
+Input parameters for GET request /gettypes :
+domain = 6
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = 6
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = ind
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 14
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = indi
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 8
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = india
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 6
+Input parameters for GET request /gettypes :
+nodeid = 11606621
+Input parameters for GET request /gettypes :
+nodeid = 31632127
+Input parameters for GET request /gettypes :
+domain = 6
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = 6
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = chi
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 7
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = chin
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 6
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = china
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 5
+Input parameters for GET request /gettypes :
+nodeid = 9785237
+Input parameters for GET request /gettypes :
+nodeid = 44237466
+Input parameters for GET request /gettypes :
+nodeid = 43073160
+Input parameters for GET request /gettypes :
+nodeid = 38042815
+Input parameters for GET request /gettypes :
+domain = 3
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 42
+Input parameters for GET request /getentities :
+domain = 3
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 294
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 110
+keyword = indi
+windowNumber = 0
+windowSize = 100
+low = 405937 high = 406982
+low = 186230 high = 186930
+low = 64542 high = 64992
+low = 17633 high = 17791
+low = 4323 high = 4373
+low = 1102 high = 1121
+done 8
+Input parameters for GET request /getentities :
+domain = -1
+type = 294
+keyword = cor
+windowNumber = 0
+windowSize = 100
+low = 9143283 high = 9147230
+low = 7845016 high = 7848852
+low = 5205051 high = 5208183
+low = 3512329 high = 3514439
+low = 2264599 high = 2265741
+low = 1466349 high = 1466883
+done 20
+Input parameters for GET request /getentities :
+domain = -1
+type = 294
+keyword = coro
+windowNumber = 0
+windowSize = 100
+low = 9143283 high = 9147230
+low = 7845016 high = 7848852
+low = 5205051 high = 5208183
+low = 3512329 high = 3514439
+low = 2264599 high = 2265741
+low = 1466349 high = 1466883
+done 5
+Input parameters for GET request /getentities :
+domain = -1
+type = 294
+keyword = coron
+windowNumber = 0
+windowSize = 100
+low = 9143283 high = 9147230
+low = 7845016 high = 7848852
+low = 5205051 high = 5208183
+low = 3512329 high = 3514439
+low = 2264599 high = 2265741
+low = 1466349 high = 1466883
+done 5
+Input parameters for GET request /getentities :
+domain = -1
+type = 294
+keyword = corona
+windowNumber = 0
+windowSize = 100
+low = 9143283 high = 9147230
+low = 7845016 high = 7848852
+low = 5205051 high = 5208183
+low = 3512329 high = 3514439
+low = 2264599 high = 2265741
+low = 1466349 high = 1466883
+done 5
+Input parameters for GET request /gettypes :
+nodeid = 13958904
+Input parameters for GET request /gettypes :
+nodeid = 40381360
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 2
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 55
+Input parameters for GET request /getentities :
+domain = 2
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 2029
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+Passive mode, single node in partial graph, finding edge
+Number of unique candidate edges: 78
+************* REBUILDING CANDIDATES *************** 78
+Number of edges in ranked list: 78
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 3
+Done with backend call!!! returning now!
+Input node = 2029
+keyword = 
+edges seen = 
+window num = 0
+window size = 100
+done 101
+Input node = 2029
+keyword = for
+edges seen = 
+window num = 0
+window size = 100
+low = 53148741 high = 53419470
+done 101
+Input node = 2029
+keyword = forr
+edges seen = 
+window num = 0
+window size = 100
+low = 53148741 high = 53419470
+low = 42442016 high = 42669195
+low = 26229065 high = 26385222
+low = 16413877 high = 16508548
+low = 10149914 high = 10204749
+low = 6368729 high = 6399036
+done 12
+Input node = 2029
+keyword = forre
+edges seen = 
+window num = 0
+window size = 100
+low = 53148741 high = 53419470
+low = 42442016 high = 42669195
+low = 26229065 high = 26385222
+low = 16413877 high = 16508548
+low = 10149914 high = 10204749
+low = 6368729 high = 6399036
+done 6
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+This is an entity!
+Number of unique candidate edges: 43
+************* REBUILDING CANDIDATES *************** 43
+Number of edges in ranked list: 43
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 209
+Done with backend call!!! returning now!
+Input parameters for GET request /getentities :
+domain = -1
+type = 294
+keyword = corona
+windowNumber = 0
+windowSize = 100
+low = 9143283 high = 9147230
+low = 7845016 high = 7848852
+low = 5205051 high = 5208183
+low = 3512329 high = 3514439
+low = 2264599 high = 2265741
+low = 1466349 high = 1466883
+done 5
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+This is an entity!
+Number of unique candidate edges: 43
+************* REBUILDING CANDIDATES *************** 43
+Number of edges in ranked list: 43
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 209
+Done with backend call!!! returning now!
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+This is an entity!
+Number of unique candidate edges: 43
+************* REBUILDING CANDIDATES *************** 43
+Number of edges in ranked list: 43
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 209
+Done with backend call!!! returning now!
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = tom
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = tom
+windowNumber = 0
+windowSize = 100
+done 101
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+Number of unique candidate edges: 230
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = tom h
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = tom han
+windowNumber = 0
+windowSize = 100
+java.lang.NumberFormatException: For input string: "WWII projects,18724538"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.parseInt(Integer.java:615)
+	at viiq.utils.BufferedRandomAccessFile.completeKeyword(BufferedRandomAccessFile.java:864)
+	at viiq.backendHelper.SpringClientHelper.completeKeyword(SpringClientHelper.java:227)
+	at viiq.backendHelper.SpringClientHelper.getEntities(SpringClientHelper.java:109)
+	at viiq.SpringClient.getEntities(SpringClient.java:86)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:777)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:706)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:618)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at viiq.simpleCORSFilter.doFilter(simpleCORSFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:537)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1085)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:658)
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1556)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1513)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+done 74
+************* REBUILDING CANDIDATES *************** 230
+Number of edges in ranked list: 230
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 6
+Done with backend call!!! returning now!
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = tom hank
+windowNumber = 0
+windowSize = 100
+java.lang.NumberFormatException: For input string: "WWII projects,18724538"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.parseInt(Integer.java:615)
+	at viiq.utils.BufferedRandomAccessFile.completeKeyword(BufferedRandomAccessFile.java:864)
+	at viiq.backendHelper.SpringClientHelper.completeKeyword(SpringClientHelper.java:227)
+	at viiq.backendHelper.SpringClientHelper.getEntities(SpringClientHelper.java:109)
+	at viiq.SpringClient.getEntities(SpringClient.java:86)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:777)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:706)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:618)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at viiq.simpleCORSFilter.doFilter(simpleCORSFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:537)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1085)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:658)
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1556)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1513)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+done 57
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = tom hanks
+windowNumber = 0
+windowSize = 100
+java.lang.NumberFormatException: For input string: "WWII projects,18724538"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.parseInt(Integer.java:615)
+	at viiq.utils.BufferedRandomAccessFile.completeKeyword(BufferedRandomAccessFile.java:864)
+	at viiq.backendHelper.SpringClientHelper.completeKeyword(SpringClientHelper.java:227)
+	at viiq.backendHelper.SpringClientHelper.getEntities(SpringClientHelper.java:109)
+	at viiq.SpringClient.getEntities(SpringClient.java:86)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:777)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:706)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:618)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at viiq.simpleCORSFilter.doFilter(simpleCORSFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:537)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1085)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:658)
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1556)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1513)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+done 53
+Input parameters for GET request /gettypes :
+nodeid = 39999
+Input parameters for GET request /gettypes :
+nodeid = 121713
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+Number of unique candidate edges: 319
+************* REBUILDING CANDIDATES *************** 319
+Number of edges in ranked list: 319
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 5
+Done with backend call!!! returning now!
+Input parameters for GET request /gettypes :
+nodeid = 1973654
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+Number of unique candidate edges: 344
+************* REBUILDING CANDIDATES *************** 344
+Number of edges in ranked list: 344
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 9
+Done with backend call!!! returning now!
+Input parameters for GET request /gettypes :
+domain = 27
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 31
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = tom
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = tom
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = tom h
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = tom ha
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = tom han
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 47
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = tom hank
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 6
+Input parameters for GET request /gettypes :
+nodeid = 10953771
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+Number of unique candidate edges: 345
+************* REBUILDING CANDIDATES *************** 345
+Number of edges in ranked list: 345
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 9
+Done with backend call!!! returning now!
+Input parameters for GET request /gettypes :
+nodeid = 26555197
+Input parameters for GET request /gettypes :
+nodeid = 13692232
+Input parameters for GET request /gettypes :
+nodeid = 1843013
+Input parameters for GET request /gettypes :
+nodeid = 38372474
+Input parameters for GET request /gettypes :
+nodeid = 10953771
+Input node = 2032
+edges seen = 47185000,1|47185552,1
+done 2
+Input node = 2038
+edges seen = 47185552,1|47185000,1
+done 2
+Input node = 45862273
+keyword = 
+edges seen = 47185000,0|47185552,0
+window num = 0
+window size = 100
+now sort and return 
+Size of labels = 1
+Found labels and populating return values now!
+done 2
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = tom hank
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 6
+Input node = 45862273
+keyword = 
+edges seen = 47185000,0|47185552,0
+window num = 0
+window size = 100
+now sort and return 
+Size of labels = 1
+Found labels and populating return values now!
+done 2
+Input node = 45862273
+keyword = 
+edges seen = 47185000,0|47185552,0
+window num = 0
+window size = 100
+now sort and return 
+Size of labels = 1
+Found labels and populating return values now!
+done 2
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = tom hank
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 6
+Input parameters for GET request /gettypes :
+nodeid = 10953771
+Input parameters for GET request /gettypes :
+domain = 27
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 31
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /gettypes :
+nodeid = 1843013
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom H
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom Ha
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom Han
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 47
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom Hank
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 6
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom Hanks
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 2
+Input parameters for GET request /gettypes :
+nodeid = 38372474
+Input parameters for GET request /gettypes :
+nodeid = 10953771
+Input parameters for GET request /gettypes :
+nodeid = 26555197
+Input parameters for GET request /gettypes :
+nodeid = 38372474
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = tom hank
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 6
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom H
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom Ha
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom Han
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 47
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom Hansk
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 1
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom Hans
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 15
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom Han
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 47
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom Hank
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 6
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom Hanks
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 2
+Input parameters for GET request /gettypes :
+nodeid = 10953771
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = tom hank
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 6
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /gettypes :
+nodeid = 2973837
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = tom hank
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 6
+Input parameters for GET request /gettypes :
+nodeid = 2973837
+Input parameters for GET request /gettypes :
+nodeid = 10953771
+Input parameters for GET request /gettypes :
+nodeid = 11227831
+Input parameters for GET request /gettypes :
+nodeid = 33276137
+Input parameters for GET request /gettypes :
+nodeid = 46481470
+Input parameters for GET request /gettypes :
+nodeid = 9418956
+Input parameters for GET request /gettypes :
+nodeid = 27884302
+Input parameters for GET request /gettypes :
+nodeid = 13400049
+Input parameters for GET request /gettypes :
+nodeid = 41973889
+Input parameters for GET request /gettypes :
+nodeid = 13400049
+Input parameters for GET request /gettypes :
+nodeid = 9418956
+Input parameters for GET request /gettypes :
+nodeid = 13400049
+Input parameters for GET request /gettypes :
+nodeid = 41973889
+Input parameters for GET request /gettypes :
+nodeid = 24573160
+Input parameters for GET request /gettypes :
+nodeid = 29583161
+Input parameters for GET request /gettypes :
+nodeid = 2106191
+Input parameters for GET request /gettypes :
+nodeid = 33788688
+Input parameters for GET request /gettypes :
+nodeid = 35446683
+Input parameters for GET request /gettypes :
+nodeid = 2354971
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /gettypes :
+nodeid = 799877
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = TomH
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 3
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = TomHan
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 1
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = TomHank
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 1
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = TomHanks
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 1
+Input parameters for GET request /gettypes :
+domain = 27
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 31
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom c
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+done 101
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom cr
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 77
+Input parameters for GET request /getentities :
+domain = 27
+type = -1
+keyword = Tom cru
+windowNumber = 0
+windowSize = 100
+low = 13407420 high = 16855221
+low = 9202631 high = 12555412
+low = 5379562 high = 6068764
+low = 3550405 high = 3656818
+low = 2235046 high = 2269317
+low = 1444680 high = 1457636
+done 6
+Input parameters for GET request /gettypes :
+nodeid = 24847710
+Input parameters for GET request /gettypes :
+nodeid = 6671612
+Input parameters for GET request /gettypes :
+nodeid = 14531242
+Input parameters for GET request /gettypes :
+nodeid = 26748482
+Input parameters for GET request /gettypes :
+nodeid = 24847710
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 18
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 70
+Input parameters for GET request /getentities :
+domain = 18
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = 18
+type = -1
+keyword = Har
+windowNumber = 0
+windowSize = 100
+low = 4325959 high = 10700654
+done 101
+Input parameters for GET request /getentities :
+domain = 18
+type = -1
+keyword = Harr
+windowNumber = 0
+windowSize = 100
+low = 4325959 high = 10700654
+done 101
+Input parameters for GET request /getentities :
+domain = 18
+type = -1
+keyword = Harry
+windowNumber = 0
+windowSize = 100
+low = 4325959 high = 10700654
+done 101
+Input parameters for GET request /gettypes :
+nodeid = 37341672
+Input parameters for GET request /gettypes :
+nodeid = 12606241
+Input parameters for GET request /gettypes :
+nodeid = 2942636
+Input parameters for GET request /gettypes :
+nodeid = 37808961
+Input parameters for GET request /gettypes :
+nodeid = 23701485
+Input parameters for GET request /gettypes :
+nodeid = 43514804
+Input parameters for GET request /gettypes :
+nodeid = 3445298
+Input parameters for GET request /gettypes :
+nodeid = 21846048
+Input parameters for GET request /gettypes :
+nodeid = 20815964
+Input parameters for GET request /gettypes :
+nodeid = 1235334
+Input parameters for GET request /gettypes :
+nodeid = 26048324
+Input parameters for GET request /gettypes :
+nodeid = 27945144
+Input parameters for GET request /gettypes :
+nodeid = 6952875
+Input parameters for GET request /gettypes :
+nodeid = 23483418
+Input parameters for GET request /gettypes :
+nodeid = 14733220
+Input parameters for GET request /gettypes :
+nodeid = 23483418
+Input parameters for GET request /gettypes :
+nodeid = 14732562
+Input parameters for GET request /getentities :
+domain = 18
+type = -1
+keyword = Harry
+windowNumber = 0
+windowSize = 100
+low = 4325959 high = 10700654
+done 101
+Input parameters for GET request /getentities :
+domain = 18
+type = -1
+keyword = Harry
+windowNumber = 0
+windowSize = 100
+low = 4325959 high = 10700654
+done 101
+Input parameters for GET request /getentities :
+domain = 18
+type = -1
+keyword = Harry
+windowNumber = 0
+windowSize = 100
+low = 4325959 high = 10700654
+done 101
+Input parameters for GET request /getentities :
+domain = 18
+type = -1
+keyword = Harry
+windowNumber = 0
+windowSize = 100
+low = 4325959 high = 10700654
+done 101
+Input parameters for GET request /gettypes :
+domain = 2
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 55
+Input parameters for GET request /getentities :
+domain = 2
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 11
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 22
+Input parameters for GET request /getentities :
+domain = 11
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 11
+keyword = sdf
+windowNumber = 0
+windowSize = 100
+low = 502 high = 522
+low = 451 high = 471
+low = 210 high = 221
+low = 51 high = 52
+done 1
+Input parameters for GET request /gettypes :
+domain = 11
+keyword = sdfs
+windowNumber = 0
+windowSize = 100
+low = 502 high = 522
+low = 451 high = 471
+low = 210 high = 221
+low = 51 high = 52
+done 1
+Input parameters for GET request /gettypes :
+domain = 11
+keyword = sdf
+windowNumber = 0
+windowSize = 100
+low = 502 high = 522
+low = 451 high = 471
+low = 210 high = 221
+low = 51 high = 52
+done 1
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = loca
+windowNumber = 0
+windowSize = 100
+done 15
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = loca
+windowNumber = 0
+windowSize = 100
+done 15
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = loca
+windowNumber = 0
+windowSize = 100
+done 15
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = loca
+windowNumber = 0
+windowSize = 100
+done 15
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 2
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 55
+Input parameters for GET request /getentities :
+domain = 2
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 2029
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+Passive mode, single node in partial graph, finding edge
+Number of unique candidate edges: 78
+************* REBUILDING CANDIDATES *************** 78
+Number of edges in ranked list: 78
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 3
+Done with backend call!!! returning now!
+************************* Invoked the backend ****************************
+Suggestion mode = 2
+Number of unique candidate edges: 78
+************* REBUILDING CANDIDATES *************** 78
+Number of edges in ranked list: 78
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 3
+Done with backend call!!! returning now!
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+Number of unique candidate edges: 258
+************* REBUILDING CANDIDATES *************** 258
+Number of edges in ranked list: 258
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 8
+Done with backend call!!! returning now!
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 11
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 22
+Input parameters for GET request /getentities :
+domain = 11
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 2
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 55
+Input parameters for GET request /getentities :
+domain = 2
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 2
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 55
+Input parameters for GET request /getentities :
+domain = 2
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 2
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 55
+Input parameters for GET request /getentities :
+domain = 2
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 2029
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input node = 2029
+keyword = 
+edges seen = 47185000,0
+window num = 0
+window size = 100
+done 101
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+Passive mode, single node in partial graph, finding edge
+Number of unique candidate edges: 78
+************* REBUILDING CANDIDATES *************** 78
+Number of edges in ranked list: 78
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 3
+Done with backend call!!! returning now!
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+Passive mode, single node in partial graph, finding edge
+Number of unique candidate edges: 78
+************* REBUILDING CANDIDATES *************** 78
+Number of edges in ranked list: 78
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 3
+Done with backend call!!! returning now!
+************************* Invoked the backend ****************************
+Suggestion mode = 1
+Passive mode, single node in partial graph, finding edge
+Number of unique candidate edges: 78
+************* REBUILDING CANDIDATES *************** 78
+Number of edges in ranked list: 78
+******************** ALL FINE ********************
+Number of unique suggestions back = 3
+Number of all suggestions back = 3
+Done with backend call!!! returning now!
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 11
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 22
+Input parameters for GET request /getentities :
+domain = 11
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 141
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 11
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 22
+Input parameters for GET request /getentities :
+domain = 11
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = 1088
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 34
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /getentities :
+domain = -1
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 9
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 37
+Input parameters for GET request /getentities :
+domain = 9
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 11
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 22
+Input parameters for GET request /getentities :
+domain = 11
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101
+Input parameters for GET request /gettypes :
+domain = 28
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 6
+Input parameters for GET request /getentities :
+domain = 28
+type = -1
+keyword = 
+windowNumber = 0
+windowSize = 100
+done 101

@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Orion</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+			<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link rel="stylesheet" href="css/editor.css">
+	<link rel="stylesheet" href="css/free.min.css">
+	<link rel="stylesheet" href="css/survey.css">
+
+
+	<!-- required stylesheet for TextboxList -->
+		<link rel="stylesheet" href="css/TextboxList.css" type="text/css" media="screen" charset="utf-8" />
+	<!-- required stylesheet for TextboxList.Autocomplete -->
+	 <link rel="stylesheet" href="css/TextboxList.Autocomplete.css" type="text/css" media="screen" charset="utf-8" />
+
+	</head>
+
+	<body style="background-color: white; max-width:100vw;">
+ <!-- <body style="background-color: #000;">-->
+	<div class="container-fluid" id="container-div" style="margin-top:5px; margin-left:0px;">
+
+		<div class=" jumbotron-padding all-round-margins" style="text-align: left; padding-top: 0px; padding-bottom: 0px; background-color: #FFFFFF;">
+
+
+		<div class="row ">
+
+			<div class="col-md-9">
+			 <nav class="navbar navbar-default" role="navigation" style="background-color:#FFFFFF; margin-left: 50px; font-size: 20px;">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						 <a class="navbar-brand" href="#" style="font-size: 30px; color: #063145; font-family: Florence;"><img class="img-responsive" src="images/Header-logo.png" alt="Orion" width="75px" height="75px" style="position: absolute; z-index:1;"></a>  <!-- Edited by AD -->
+
+					</div>
+
+				</nav>
+			</div>
+
+	 <div class="col-md-3">       <nav class="navbar navbar-default" role="navigation" style="background-color:#FFFFFF; margin-left: 50px; font-size: 20px;">
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+						<ul class="nav navbar-nav"><style>
+									 a:link    {background-color:#FFFFFF; text-decoration:none}</style>
+												 <li class="active"><a href="index.html"><img class="img-responsive" src="images/Home-icon.png" alt="Home" style="padding-left: 25px;"></a></li>
+												<li><a href="editor.html"><img class="img-responsive" src="images/Editor-icon.png" alt="Editor" style="padding-left: 25px;"><img class=
+"img-responsive" src="images/Top-navigation-selection_1.png" alt=""></a></li>
+
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</nav>
+				</div>
+
+
+		</div> <!-- row -->
+
+
+
+
+
+		</div>
+<!--
+		<div class="col-md-3 border container-fluid all-round-margins" style="margin-top: 21px; margin-bottom: 1px; margin-right: 0px; padding-right: 0px; border-radius: 0px;">
+			 <div class="col-md-12" id="sideBar"  style="background-color:#fff; margin: 0px; margin-right:0px; padding-top: 0px; padding-right: 0px; padding-left: 0px;  border: 0px; overflow-y: auto; height: 807px;">
+
+
+
+				<div class="row" style="height: 535px; padding: 0px; margin: 0px;">
+				 <div class='wrap' id="wrap1" style=" margin: 0px; padding: 5px;">
+						<div class='content' id="actions" style="margin: 0px; padding: 0px;">
+							<h4 style="color: #FFFFFF; text-align: center;">Possible Actions</h4>
+							 <ul id="active-help" style= "margin-left: 2px; color: #4C4C33; margin-right: 2 px; padding: 0px; margin-bottom: 2px; margin-top: 15px; list-style-type: none; font-family: Segoe UI; font-size: 14px; line-height: 1.6; padding-left: 10px; background-color: #C9FFFF; text-align: justify; border-radius: 10px; padding-right: 10px; padding-bottom: 10px;">
+									<li class="li-animation" style="padding-top: 10px; opacity: 1;"><b>Click</b> on the canvas to add a new node.</li>
+							</ul>
+						</div>
+					</div>
+			 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			 <div class="row">
+			 <div class="col-md-12" style="margin-left: 0px; padding-left: 0px; margin-right: 0px; padding-right: 0px;">
+				 <div class="col-md-9" id="useful-tips-div" style="background-color:#00906C; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+					<h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Useful Tips</h4></div>
+					<div class="col-md-2" style="margin-left: 0px; margin-right: 0px; margin-bottom: 0px; padding-top: 10px; background-color: #00906C; padding-bottom: 0px; padding-left: 0px;margin-left: 0px; cursor: pointer;">
+					<a class="button glyphicon glyphicon-plus" id="useful-tips" href="#" style="height: 30px; margin-bottom: 5px; margin-top: 2px;padding-top: 1px; background-color: #00906C; margin-left: 0px; padding-left: 8px; padding-right: 2px; padding-bottom: 2px; padding-top: 3px;"></a>
+				 </div>
+				</div>
+			</div>
+
+
+
+			 <div class="row">
+				 <div class="col-md-12" style="margin-left: 0px; padding-left: 0px; margin-right: 0px; padding-right: 0px;">
+				 <div class="col-md-9" id="edge-types-div" style="background-color:#d34836; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+					<h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Edge Types</h4></div>
+					<div class="col-md-2" style="margin-left: 0px; margin-right: 0px; margin-bottom: 0px; padding-top: 10px; background-color: #d34836; padding-bottom: 0px; padding-left: 0px;margin-left: 0px; cursor: pointer;">
+					<a class="button glyphicon glyphicon-plus" id="edge-types" href="#" style="height: 30px; margin-bottom: 5px; margin-top: 2px; padding-top: 1px; background-color: #d34836; margin-left: 0px; padding-left: 8px; padding-right: 2px; padding-bottom: 2px; padding-top: 3px;"></a>
+			 </div></div></div>
+
+
+
+
+			 <div class="row">
+			 <div class="col-md-12" style="margin-left: 0px; padding-left: 0px; margin-right: 0px; padding-right: 0px;">
+				 <div class="col-md-9" id="settings-div" style="background-color:#009999; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+					<h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Settings</h4></div>
+					<div class="col-md-2" style="margin-left: 0px; margin-right: 0px; margin-bottom: 0px; padding-top: 10px; background-color: #009999; padding-bottom: 0px; padding-left: 0px;margin-left: 0px; cursor: pointer;">
+					<a class="button glyphicon glyphicon-plus" id="settings" href="#" style="height: 30px; margin-bottom: 5px; margin-top: 2px; padding-top: 1px; background-color: #009999; margin-left: 0px; padding-left: 8px; padding-right: 2px; padding-bottom: 2px; padding-top: 3px;"></a>
+				</div></div>
+			</div>
+
+
+			 <div class="row">
+				 <div class="col-md-12" style="margin-left: 0px; padding-left: 0px; margin-right: 0px; padding-right: 0px;">
+				 <div class="col-md-11" style="background-color:#D85B4D; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+                  <a href="https://docs.google.com/forms/d/1gFr7Qko2NOsKZ-PT_4fEFOY-kYXbZOiguaiYqekWko0/viewform" target="_blank">
+
+					 <a href="#surveyModal" class="survey_Modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+
+					<h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Submit</h4></a></div>
+
+
+					 </a>
+				</div>
+			 </div>
+
+
+
+			<div class="row">
+				<div class="col-md-12" style="margin-left: 0px; padding-left: 0px; margin-right: 0px; padding-right: 0px;">
+				 <div class="col-md-11" id="clear-button" style="background-color:#00CC99; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+				<h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Clear Canvas</h4></div>
+				</div>
+			 </div>
+
+
+
+
+				 <div class ="col-md-5">
+					<div class="col-md-8" id="possible-actions-div" style="background-color:#007bb5; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+					<h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Possible Actions</h4></div>
+					<div class="col-md-4" id="possible-actions-plus" style="margin-left: 0px; margin-right: 0px; margin-bottom: 0px; padding-top: 18px; background-color: #007bb5; padding-bottom: 6px; padding-left: 0px;margin-left: 0px; cursor: pointer;">
+					<a class="button glyphicon glyphicon-plus" id="possible-actions" href="#" style="height: 30px; margin-bottom: 10px; margin-top: 2px; padding-top: 1px; background-color: #007bb5; margin-left: 0px; padding-left: 8px; padding-right: 2px; padding-bottom: 2px; padding-top: 3px;"></a>
+					 </div>
+				</div>
+
+
+
+		</div>
+		</div> -->
+<div class="col-md-12" style="height: 21px;background-color:#063145;"></div>
+		<div class="col-md-12 border container-fluid all-round-margins" id="app-body" style=" margin-bottom: 1px; margin-left: 0px; padding-left: 15px;" >
+
+		</div>
+		</div>
+
+		<div style="text-align:center;margin-left:190px;">
+<div class="row" style="display: flex;">
+<div class="menu-border" style=" height:50px;border-right:solid gray 1px;padding:5px;padding-right:15px;padding-left:15px;">
+<h4 style="float: left;font-family: Segoe UI; padding-right:5px;">Locked Mode</h4>
+<label class="switch">
+  <input id="switch-button" type="checkbox">
+  <span id="rearrange-button" class="slider round"></span>
+</label>
+<h4 style="float: right;font-family: Segoe UI;padding-left:5px; ">Rearrange Mode</h4>
+</div>
+<!-- Edited by AD -->
+<!-- 	 <div style="margin-left:10px;"> -->
+
+		 <div class="menu-border" id="settings-div" style="height:50px;border-right:solid gray 1px;padding:5px;padding-right:15px;padding-left:15px; text-align: center;  cursor: pointer;">
+
+			<h4 style="font-family: Segoe UI;float:left;padding-right:5px;">Show </h4>
+        <select class="form-control wrapper" id="suggestion-options" style="display: inline;width:40px;padding: 0px;">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option selected="selected" value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+				<h4 style="font-family: Segoe UI; float:right;padding-left:5px;"> Suggestions</h4>
+			</div>
+
+<!-- 	</div> -->
+
+
+
+
+
+ 	    <div class="menu-border" id="clear-button" style="height:50px; text-align: center; padding:5px;cursor: pointer; padding-right:15px;padding-left:15px;">
+     <i class="material-icons" style="font-size:39px;border-color: black;">backspace</i>
+     <h4 style="float: right;font-family: Segoe UI;  padding-left:5px; ">Clear Canvas</h4></div>
+
+
+
+	    <div class="menu-border" id="button-g" style="height:50px;border-left:solid gray 1px; text-align: center; padding:5px;cursor: pointer; padding-right:15px;padding-left:15px;">
+     <i class="material-icons" style="border-color: black;font-size:39px;">lightbulb</i>
+     <h4 style="font-family: Segoe UI; float:right; padding-left:5px;">Suggest Different Edges</h4></div>
+
+
+</div>
+	 </div>
+</div>
+
+<div class="panel graph" id="svg-div" style="margin: 0px; border-radius: 0px;">
+		<!-- <div class="pull-right" id="possible-actions" style="position:absolute;right:90px;margin-top:120px;background-color:#007bb5; padding-left: 10px;padding-right: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+		<h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Possible Actions</h4></div> -->
+
+
+
+		<!-- <div  style="position:absolute;right:2px;width: 238px;margin-top:95px;margin-left: 0px; padding-left: 0px; margin-right: 0px; padding-right: 0px;">
+			<div class="col-md-11" id="useful-tips-div" style="background-color:#00906C; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+			 <h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Drawing Tips</h4></div>
+
+		 </div> -->
+
+
+
+<!-- 		 <div  style="position:absolute;right:2px;width: 238px;margin-top:155px;margin-left: 0px; padding-left: 0px; margin-right: 0px; padding-right: 0px;">
+			 <div class="col-md-9" id="edge-types-div" style="background-color:#d34836; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+				<h4 style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Edge Types</h4></div>
+				<div class="col-md-2" style="margin-left: 0px; margin-right: 0px; margin-bottom: 0px; padding-top: 10px; background-color: #d34836; padding-bottom: 0px; padding-left: 0px;margin-left: 0px; cursor: pointer;">
+				<a class="button glyphicon glyphicon-plus" id="edge-types" href="#" style="height: 30px; margin-bottom: 5px; margin-top: 2px; padding-top: 1px; background-color: #d34836; margin-left: 0px; padding-left: 8px; padding-right: 2px; padding-bottom: 2px; padding-top: 3px;"></a>
+		 </div>
+	 </div> -->
+<!-- Edited by AD -->
+<!--   <div style="position:absolute;right:2px;width: 238px;margin-top:395px;margin-left: 0px; padding-left: 0px; margin-right: 0px; padding-right: 0px;">
+	<div class="col-md-11" id="rearrange-button" style="background-color:#02040F	; padding-left: 10px; margin-left: 0px; text-align: center; padding-bottom: 5px; cursor: pointer;">
+ <h4 id = "switch-button" style="font-family: Segoe UI; padding-top: 3px; color: #FFFFFF; padding-left: 10px;">Rearrange the Graph</h4></div>
+ </div> -->
+
+
+
+
+<!--
+<div class='wrap' id="wrap2" >
+	<button type="button" class="close" aria-hidden="true" id="wrap2-x-button" style="font-size: 15px;">close</button>
+	<div class='content'>
+	<h2>Drawing Tips</h2>
+
+					 <p style="font-family: Segoe UI; text-align: justify;">To <b>add a new node</b>, click on empty space in the canvas. Use the dialog box that pops up to set the node's value to either a type or an entity.</p>
+					 <p style="font-family: Segoe UI; text-align: justify;">To <b>add a new edge</b> between two nodes, hold down the shift key, click on one node and drag to the other node. Select the edge value from the dialog box that pops up.</p>
+					 <p style="font-family: Segoe UI; text-align: justify;">To <b>re-position a node</b>, click and drag the node around.</p>
+					 <p style="font-family: Segoe UI; text-align: justify;">To <b>remove a node</b>, select the node by clicking on it and press the Delete button.</p>
+					 <p style="font-family: Segoe UI; text-align: justify;">To <b>edit a node's value</b>, double click on the node and use the dialog box that pops up to change the value.</p>
+					 <p style="font-family: Segoe UI; text-align: justify;">To <b>remove an edge</b>, select the edge by clicking on it and press the Delete button.</p>
+
+	</div>
+</div>
+-->
+
+
+<!--
+<div class='wrap' id="wrap4" >
+	<button type="button" class="close" aria-hidden="true" id="wrap4-x-button" style="font-size: 15px;">close</button>
+	<div class='content'>
+	<h2>Edge Types</h2>
+
+	<ul id="active-examples" style="font-size: 12px; font-family: Segoe UI; margin-top: 0px; margin-bottom: 10px; margin-left: 15px; margin-right: 10px; padding: 0px; line-height: 1.5">
+	</ul>
+	<button type="button" class="btn btn-primary" id="Add-Edge-button" style="border-radius: 8px; border: none; display: none; margin-bottom: 10px;margin-left: 15px;">Add Edge</button>
+	<button type="button" class="btn btn-primary" id="Reverse-button" style="border-radius: 8px; border: none; margin-left:20px; margin-bottom: 10px;display:none;">Reverse Role</button>
+	</div>
+</div>
+-->
+
+
+
+
+<div class='wrap' id="wrap5" >
+	<div class='content'>
+				<p style=" display: inline; padding-left: 35px; font-family: Segoe UI; font-size: 15px; margin-top: 60px; margin-left: 90px;">Are you sure you want to clear the canvas?</p><br>
+					<button type="button" class="btn btn-primary" id="clear-graph" style="width: 75px; margin-top: 20px; margin-left: 180px; margin-right: 15px;">Clear</button>
+					<button type="button" class="btn btn-primary" id="cancel-clear" style="width: 75px; margin-top: 20px;">Cancel</button>
+	</div>
+</div>
+
+
+
+<!-- final code here  -->
+
+<!-- Large modal -->
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal-dialog modal-lg">
+	<div class="modal-content">
+
+		<div class="modal-header modalHeader">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">SURVEY FORM</h4>
+		</div>
+
+		<div class="modal-body">
+
+			<div class="InitialRead" id="initial-read" style="display:none; text-align:center;"><h3>Thank you for participating in this user study.</h3></div>
+			<div class="termsCondition" id="termsCondition">
+
+			<ul class="UL" style="padding:10px; border: solid 2px #d3d3d3; font-family:Segoe UI; text-align:justify;">
+					<p><h4>Thank you for participating in this user study. Your opinions and survey actions will be anonymous. The opinions of all users will be collated and used for academic purposes. If you have any doubts regarding the survey questions, please ask the moderators for clarifications.</h4> </p>
+
+					<p><h4>Close the survey page or click outside the survey page to return back to the query canvas. You can continue with the survey again by clicking on the Submit/Survey button on the left panel.</h4></p>
+
+					<p><h4>The Orion team would like to thank you again for your time and contributions. We welcome any feedback you may have to improve the overall experience. You can contact us at <a href="mailto:orionxxx@gmail.com">orionxxx@gmail.com</a></h4></p>
+			</ul>
+
+
+
+</div><!--closing termsCondition-->
+			<!-- Form Starts here -->
+			<script type="text/javascript">var submitted=false;</script>
+			<iframe name="hidden_iframe" id="hidden_iframe"
+			style="display:none;" onload="if(submitted)
+			{window.location='https://[server_name]/orion/editor.html';}"></iframe>
+
+
+				<form action="https://docs.google.com/forms/d/e/1FAIpQLSdKQOnt2RIZ8io8fTnyMy-IiuCpp5RsbDjs3xLDaVUa5KVMFA/formResponse" method="POST" id="ss-form" target="hidden_iframe" autocomplete="on" onsubmit="submitted=true"><ol role="list" class="ss-question-list" style="padding-left: 0;">
+			<!-- For first Field	 -->
+				<!-- for the second field -->
+				<div class="OuterDivForButton" id="tobeHiddenAfterClick">
+						<div class="innerDivForButton">
+						<a class="smoothScroll" href="#focusPage"><button type="button" id="agreeButton" class="btn btn-success agree" onclick="myFunctionForHiding()" data-toggle="collapse" data-target="#FillForm">Agree</button></a>
+								<button type="button" class="btn btn-danger decline" data-toggle="collapse" class="close" data-dismiss="modal" data-target="../">Decline</button>
+						</div>
+				</div>
+
+
+				<div id="slide">
+				<div class="IntroPart" id="IntroPart" style="display:none;">
+						<h4 class="headP">Please answer the questions below</h4>
+				</div></div>
+				<!-- Form to be filled as  the user has accepted the request -->
+
+
+
+
+
+				<div id="FillForm" class="collapse" style="position:relative;">
+
+						<!-- Input 1 - Text Box  -->
+
+					<!-- This will be first Multiple Choice Question with Radio Buttons-->
+					<div class="feedbackQuestion">
+
+						<div class="ss-form-question errorbox-good" role="listitem">
+						<div dir="auto" class="ss-item ss-item-required ss-text">
+							<div class="ss-form-entry">
+								<!-- question label -->
+
+								<div class="questionLabels">
+
+
+								<label class="ss-q-item-label" for="entry_219636070"><div class="ss-q-title">Query_Id
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+								</div>
+
+								<!-- Answer labels -->
+							<div class="answerLabels Query_id">
+
+								<input type="text" name="entry.219636070" value="" class="ss-q-short" id="entry_219636070" dir="auto" aria-label="Query_Id  " aria-required="true" required="" title="" autocomplete="off">
+
+
+								<!-- <ul class="ss-choices" role="radiogroup" aria-label="This is a multiple choice question ?   "><li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.2050607030" value="Option 4" id="group_2050607030_4" role="radio" class="ss-q-radio" aria-label="Option 4" required="" aria-required="true"></span>
+								<span class="ss-choice-label">Option 4</span>
+								</label></li> <li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.2050607030" value="Option 5" id="group_2050607030_5" role="radio" class="ss-q-radio" aria-label="Option 5" required="" aria-required="true"></span>
+								<span class="ss-choice-label">Option 5</span>
+								</label></li> <li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.2050607030" value="Option 2" id="group_2050607030_2" role="radio" class="ss-q-radio" aria-label="Option 2" required="" aria-required="true"></span>
+								<span class="ss-choice-label">Option 2</span>
+								</label></li> <li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.2050607030" value="Option 3" id="group_2050607030_3" role="radio" class="ss-q-radio" aria-label="Option 3" required="" aria-required="true"></span>
+								<span class="ss-choice-label">Option 3</span>
+								</label></li> <li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.2050607030" value="Option 1" id="group_2050607030_1" role="radio" class="ss-q-radio" aria-label="Option 1" required="" aria-required="true"></span>
+								<span class="ss-choice-label">Option 1</span>
+								</label></li></ul> -->
+
+							</div>
+								<div class="error-message" id="1648097047_errorMessage"></div>
+							<!-- <div class="error-message" id="336080986_errorMessage"></div> -->
+							</div></div></div>
+
+					</div>
+
+
+
+						<!-- Question 2  -->
+						<!-- Question 2  -->
+
+					<!-- This is going to be second question and will contain selecting multiple choice -->
+
+					<div class="feedbackQuestion">
+
+						<div class="ss-form-question errorbox-good" role="listitem">
+					 <div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+
+								<!-- Styling the questioning labels 	 -->
+								<div class="questionLabels">
+
+									<label class="ss-q-item-label" for="entry_77047778"><div class="ss-q-title">Overall, I am satisfied with the ease of completing the task ?
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+								</div>
+								<!-- Styling the questioning labels 	 -->
+
+								<!-- styling answer labels -->
+
+								<div class="answerLabels">
+
+									<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the ease of completing the task ?  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.929807715" value="1" id="group_929807715_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.929807715" value="2" id="group_929807715_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.929807715" value="3" id="group_929807715_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.929807715" value="4" id="group_929807715_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.929807715" value="5" id="group_929807715_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.929807715" value="6" id="group_929807715_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.929807715" value="7" id="group_929807715_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+								</div>
+								<!-- styling answer labels -->
+
+								<div class="error-message" id="77047778_errorMessage"></div>
+								</div></div></div>
+
+					</div>
+
+						<!-- Rating Question -->
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_292813960"><div class="ss-q-title">Overall, I am satisfied with the amount of time it took to complete the task?
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the amount of time it took to complete the task?  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.731399091" value="1" id="group_731399091_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.731399091" value="2" id="group_731399091_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.731399091" value="3" id="group_731399091_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.731399091" value="4" id="group_731399091_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.731399091" value="5" id="group_731399091_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.731399091" value="6" id="group_731399091_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.731399091" value="7" id="group_731399091_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="292813960_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+						<!-- Question 3  -->
+						<!-- Question 3  -->
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_117960911"><div class="ss-q-title">Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<ul class="ss-choices" role="radiogroup" aria-label="Overall, I am satisfied with the support information (system features, help information, messages) when completing the task.  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.715138840" value="1" id="group_715138840_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></span>
+<span class="ss-choice-label">1 (Strongly disagree)</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.715138840" value="2" id="group_715138840_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></span>
+<span class="ss-choice-label">2</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.715138840" value="3" id="group_715138840_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></span>
+<span class="ss-choice-label">3</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.715138840" value="4" id="group_715138840_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></span>
+<span class="ss-choice-label">4</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.715138840" value="5" id="group_715138840_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></span>
+<span class="ss-choice-label">5</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.715138840" value="6" id="group_715138840_6" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></span>
+<span class="ss-choice-label">6</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.715138840" value="7" id="group_715138840_7" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></span>
+<span class="ss-choice-label">7 (Strongly agree)</span>
+</label></li></ul>
+
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="117960911_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+
+
+						<!-- Question Comments  -->
+						<!-- Question Comments  -->
+
+						<div class="feedbackQuestion">
+
+							<div class="ss-form-question errorbox-good" role="listitem">
+							<div dir="auto" class="ss-item ss-item-required ss-paragraph-text">
+								<div class="ss-form-entry">
+								<!-- Rating Question will come here -->
+							<div class="questionLabels">
+								<label class="ss-q-item-label" for="entry_1110083243"><div class="ss-q-title">Comments?
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+							</div>
+								<!-- Rating Question will end here -->
+
+								<!-- Rating Answer will Come here-->
+							<div class="answerLabels">
+								<textarea name="entry.1110083243" rows="8" cols="0" class="ss-q-long" id="entry_1110083243" dir="auto" aria-label="Comments?  "></textarea>
+							</div>
+								<!--Rating answers will come here-->
+								<div class="error-message" id="1521404532_errorMessage"></div>
+							</div></div></div>
+
+						</div>
+
+
+
+						<!-- Extra Data With Hidden Fields -->
+						<!-- Extra Data With Hidden Fields -->
+						<!-- Extra Data With Hidden Fields -->
+						<!-- Extra Data With Hidden Fields -->
+						<!-- Extra Data With Hidden Fields -->
+
+<div class="row" id="thehiddenField" style="display:none;">
+
+
+	<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_425796398"><div class="ss-q-title">Partial Query Graph
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.425796398" value="" class="ss-q-short" id="entry_425796398" dir="auto" aria-label="Partial Query Graph  " title="">
+<div class="error-message" id="633333439_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_2022483379"><div class="ss-q-title">rejected query graph
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.2022483379" value="" class="ss-q-short" id="entry_2022483379" dir="auto" aria-label="rejected query graph  " title="">
+<div class="error-message" id="97889570_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_914362311"><div class="ss-q-title">start_time
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.914362311" value="" class="ss-q-short" id="entry_914362311" dir="auto" aria-label="start_time  " title="">
+<div class="error-message" id="425231887_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_978148691"><div class="ss-q-title">End_Time
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.978148691" value="" class="ss-q-short" id="entry_978148691" dir="auto" aria-label="End_Time  " title="">
+<div class="error-message" id="1651340883_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_1515945795"><div class="ss-q-title">No_of_iterations
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.1515945795" value="" class="ss-q-short" id="entry_1515945795" dir="auto" aria-label="No_of_iterations  " title="">
+<div class="error-message" id="363132949_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_1404241487"><div class="ss-q-title">Time_Elapsed = Start_Time-EndTime
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+<input type="text" name="entry.1404241487" value="" class="ss-q-short" id="entry_1404241487" dir="auto" aria-label="Time_Elapsed = Start_Time-EndTime  " title="">
+<div class="error-message" id="315835826_errorMessage"></div>
+<div class="required-message">This is a required question</div>
+</div></div></div>
+</div>
+
+						<!-- Extra data Ends -->
+						<!-- Extra data Ends -->
+						<!-- Extra data Ends -->
+						<!-- Extra data Ends -->
+						<!-- Extra data Ends -->
+
+						<input type="hidden" name="draftResponse" value="[,,&quot;-1875642154611911154&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+
+<input type="hidden" name="fvv" value="0">
+
+
+<input type="hidden" name="fbzx" value="-1875642154611911154">
+
+						<div class="ss-item ss-navigate submitButton">
+							<input type="submit" name="submit" value="Submit" id="ss-submit" onclick="collectDumpVariables()" class="jfk-button jfk-button-action btn btn-primary btn-lg" style="text-align:center;">
+						</div>
+						</ol></form>
+
+				</div>
+
+
+		</div><!-- closing modal-body-->
+
+	</div>
+</div>
+</div>
+
+<!-- Code Ends here : Rudresh -->
+
+<!-- Dialog Modal Starts here -->
+
+<!-- Modal -->
+<div class="modal fade" id="DialogModal" name="targget" role="dialog">
+<div class="modal-dialog modal-sm">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Form Submission Successful</h4>
+		</div>
+		<div class="modal-body">
+			<p>Thanks For Your Feedback.</p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+		<div class="modal fade" id="loading" data-backdrop="static" data-keyboard="false" style="top:300px;z-index:1300;">
+			<div class="modal-dialog" style="opacity:0.7; width: 140px;">
+			<div class="modal-content ">
+				<div class ="modal-body">
+				 <img src="images/ajax-loader.gif" id="loading-indicator" style="display:none; opacity: 1; z-index:1301;" />
+			</div>
+			</div>
+		</div>
+		</div>
+
+
+
+
+		<div class="modal fade" id="nodeEditModal" data-backdrop="static" data-keyboard="false" style="font-family: segoe UI;">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+<!-- 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="node-edit-x-button" style="font-size: 15px;">close</button> -->
+						<h4 class="modal-title" id="node-edit-modal-title">Set an Entity</h4>
+					</div>
+					<div class="modal-body">
+					<div class="var-count border-position border" id ="node-edit-border" style="display: none; padding-bottom: 0px; margin-bottom: 0px;">
+						<div id="node-edit-selectDiv">
+						 <div id="node-edit-type" style="display: none;" class="row">
+							 <p class="col-md-3" style="margin-top: 0px; padding-top: 2px; text-align: right;"> <b>Type </b> </p>
+								<select class="form-control wrapper col-md-8" id="node-edit-type-options" style="width: 57%; overflow: auto;">
+									<option value="Select Name" >Select Type...</option>
+								</select>
+
+						 </div>
+						 <div id ="node-edit-entity-search" class="row" style="display: none;">
+							<p class="col-md-3" style ="margin-top: 0px; text-align: right;"> <b>Entity Search </b> </p>
+							<input type="text" name="test6" value="" id="form_tags_input_6" autocomplete="off" style="display: none;">
+							 <div style="height: 7px;"></div>
+						 </div>
+						 <div id="node-edit-entity" style="display: none; margin-top: 12px;" class="row">
+						     <div>
+							<p class="col-md-3" style="margin-top: 0px; text-align: right;"> <b>Entity </b> </p>
+							<select class="form-control wrapper col-md-8" id="node-edit-entity-options" style="width: 70%; overflow: auto;">
+								<option value="Select Name" >Select Entity...</option>
+							</select>
+							</div>
+							<div style="text-align:center;">
+							<button type = "button" id="node-edit-entity-back" style="background-color: white; padding: 4px 6px; margin-left:5px;border: 0px;">&#9668 Prev</button>
+							<button type = "button" id="node-edit-entity-next" style="background-color: white; padding: 4px 6px; border: 0px;">Next &#9658</button>
+							</div>
+					 </div>
+
+						 </div>
+
+					</div>
+		 </div>
+				 <div class="modal-footer" style="text-align:center;border-color: #063145; padding-bottom: 0px; margin-bottom: 20px; margin-left: 20px; margin-right: 20px; margin-top: 5px;">
+				 <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" id="node-edit-x-button" style="font-size: 15px;">Cancel</button>
+					<button type="button" class="btn btn-primary" id="node-edit-save-changes" style="background-color:#828b8f;width: 75px;">Confirm</button>
+					 <!-- <button type="button" class="btn btn-primary" id="node-edit-show-instructions" style="width: 75px;">Help</button>-->
+				 </div>
+			 </div><!-- /.modal-content -->
+		 </div>
+		 <div class="filler" style="height:100%;width:100%;background-color:rgba(17,17,17,0.2);position:absolute;display:none;z-index:2000;">
+				 <div class="setter" style="position:relative;left:45%;top:30%;">
+					 <img src="images/ajax-loader.gif" id="loading-indicator" style="opacity:1;" />
+				 </div>
+		 </div><!-- /.modal-dialog -->
+	 </div><!-- /.modal -->
+
+<div class="modal fade" id="myModal" role="dialog" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog" style="width:1010px;">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+<!-- 				<button type="button" class="close" data-dismiss="modal" id="x-button">&times;</button> -->
+				<h4 class="modal-title" id="modal-title">Modal Header</h4>
+			</div>
+			<div class="modal-body">
+				<div id = "selectDiv" class="row" style="margin:0px;">
+					<div id="edge-div" style ="display: none;">
+					<div class="row">
+						<div class="row" style="padding-bottom: 5px;">
+
+						<select class="form-control wrapper col-md-11" id="edge-options" style="margin:57px;width: 85%;">
+							<option value="Select Name" id="add-value-1" >select Edge...</option>
+						</select>
+						</div>
+					</div>
+					</div>
+					<div id="domain-div" style="padding:0px 22px;" class="col-sm-4">
+						<div class="row">
+							Domains
+						</div>
+						<div id ="domain-keyword-div" style="width:100%;margin-bottom:5px;" >
+
+
+							<input type="text" id="domain-selected-value" value="-1" style="display:none;">
+
+						</div>
+						<div class="row" style="visibility: collapse;">
+							<input type="text" name="test6" value="" id="form_tags_input_6" autocomplete="off" >
+							 <div style="height: 7px;"></div>
+						</div>
+						<div class="row" style="overflow:hidden;padding:0px;border: 1.5px solid #9aa9a9;border-radius: 10px;">
+							<select id="domain-options" style="width:100%;height:345px;margin:auto;text-transform: uppercase;border-radius: 10px;overflow:auto;" class="" size=20 name="">
+
+							</select>
+							<div style="text-align:center;visibility:hidden;">
+							<button type = "button" style="background-color: white; padding: 4px 6px; margin-left:5px;border: 0px;">&#9668 Prev</button>
+							<button type = "button" style="background-color: white; padding: 4px 6px; border: 0px;">Next &#9658</button>
+							</div>
+						</div>
+						<div class="row">
+
+						</div>
+						<div class="col-sm-4" style="margin-left:-15px;margin-right:-20px;padding:0px;width:100%;">
+									 <input type="text" id="domain-selected" style ="text-transform:uppercase;display: none; border-radius: 8px; overflow: visible;text-overflow: ellipsis; float: left; text-align: center; background-color:#80CCCC;border-width:0px;color:#063145;max-width:290px;margin-bottom: 3px; margin-top:8px; " disabled="disabled">
+				<button type="button" class="close-icon" id="domain-x-button" style="display:none; margin-top: 10px;">×</button>
+							</div>
+
+					</div>
+					<div id="type-border" style="padding:0px 22px;" class="col-sm-4">
+
+						<div class="row" >
+							Types
+						</div>
+						<div id ="type-keyword-div" style="margin-bottom:5px;margin-left:-20px;margin-right:-20px;" >
+
+
+							<input type="text" id="type-selected-value" value="-1" style="display:none;">
+
+							<input type="text" name="test5" value="" id="form_tags_input_5" autocomplete="off" style="display: none;">
+
+						</div>
+						<div id="type-div" class="row" style="box-sizing: border-box;overflow:hidden;z-index:1;border: 1.5px solid #9aa9a9;border-radius: 10px;">
+							<select id = "type-options" style=" z-index:-1;width:100%;height:345px;border-radius: 10px;margin:auto;text-transform:uppercase;overflow:auto;" class="" size=20 name="">
+
+							</select>
+							<div style="text-align:center;">
+							<button type = "button" id="type-back" style="background-color: transparent; padding: 4px 6px; margin-left:5px; border: 0px;">&#9668 Prev</button>
+			<button type = "button" id="type-next" style="background-color: transparent; padding: 6px 6px; border: 0px;">Next &#9658</button>
+			</div>
+						</div>
+						<div class="row">
+
+						</div>
+						<div class="col-sm-4" style="margin-left:-15px;margin-right:-20px;padding:0px;width:306px;">
+									<input type="text" id="type-selected" style ="text-transform:uppercase;display: none; border-radius: 8px; overflow: visible;text-overflow: ellipsis; float: left;text-align: center; background-color:#80CCCC;border-width:0px;color:#063145;max-width:283px; width:100%; margin-bottom: 3px; margin-top:8px;" disabled="disabled">
+						 <button type="button" class="close-icon" id="type-x-button" style="display:none; margin-top: 10px;">×</button>
+							</div>
+
+					</div>
+					<div id="entity-border" style="padding:0px 22px;" class="col-sm-4">
+
+						<div class="row" >
+							Entities
+						</div>
+						<div id ="keyword-div" style="margin-bottom:5px;margin-left:-20px;margin-right:-20px;">
+
+
+							<input type="text" id="entity-selected-value" value="-1" style="display:none;">
+
+							<input type="text" name="test4" value="" id="form_tags_input_4" autocomplete="off" style="display: none;">
+						</div>
+						<div id="entity-div" class="row" style="overflow:hidden;padding:0px;border: 1.5px solid #9aa9a9;border-radius: 10px;z-index:1;">
+							<select id = "entity-options" style="width:100%;height:345px;margin:auto;overflow:auto;border-radius: 10px;" class="" size=20 name="">
+
+							</select>
+							<div style="text-align:center;">
+							<button type = "button" id="entity-back" style="margin-bottom:1px;background-color: white; padding: 4px 6px; margin-left:5px; border: 0px;">&#9668 Prev</button>
+			<button type = "button" id="entity-next" style="background-color: white; padding: 4px 6px; border: 0px;">Next &#9658</button>
+			</div>
+						</div>
+						<div class="row">
+
+						</div>
+						<div class="col-sm-4" style="margin-left:-15px;margin-right:-20px;padding:0px;width:306px;">
+								 <input type="text"  id="entity-selected" style ="display: none; border-radius: 8px; overflow: visible; text-overflow: ellipsis; float: left; text-align: center; background-color: #80CCCC; border-width: 0px; color: #063145;max-width:283px; width:100%; margin-bottom: 2px; margin-top: 10px;" disabled="disabled">
+								<button type="button" class="close-icon" id="entity-x-button" style="display:none; margin-top: 10px;">×</button>
+							</div>
+
+
+					</div>
+					</div>
+					<div class="row" id="selected-div" style="padding-left:2px;">
+<!-- 							<div class="col-sm-4">
+									 <input type="text" id="domain-selected" style ="text-transform:uppercase;display: none; border-radius: 8px; overflow: visible;text-overflow: ellipsis; float: left; text-align: center; background-color:#80CCCC;border-width:0px;color:#063145;max-width:290px;width:100%; margin-bottom: 3px; margin-top:8px; padding-left:10px;" disabled="disabled">
+				<button type="button" class="close-icon" id="domain-x-button" style="display:none; margin-top: 10px;">×</button>
+							</div>
+							<div class="col-sm-4" style="padding-left:12px;">
+									<input type="text" id="type-selected" style ="text-transform:uppercase;display: none; border-radius: 8px; overflow: visible;text-overflow: ellipsis; float: left;text-align: center; background-color:#80CCCC;border-width:0px;color:#063145;max-width:284px; width:100%; margin-bottom: 3px; margin-top:8px; padding-left:10px;" disabled="disabled">
+						 <button type="button" class="close-icon" id="type-x-button" style="display:none; margin-top: 10px;">×</button>
+							</div>
+							<div class="col-sm-4" style="padding-left:2px; overflow: visible;">
+								 <input type="textarea"  id="entity-selected" style ="text-transform:uppercase;display: none; border-radius: 8px; overflow: visible; text-overflow: ellipsis; float: left; text-align: center; background-color: #80CCCC; border-width: 0px; color: #063145;max-width:290px; width:100%; margin-bottom: 2px; margin-top: 10px; padding-left:10px;" disabled="disabled">
+								<button type="button" class="close-icon" id="entity-x-button" style="display:none; margin-top: 10px;">×</button>
+							</div> -->
+
+					</div>
+					<div style="text-align:center;padding-top:10px;">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" id="x-button" style="width: 75px; font-size: 16px; padding-left:9px;">Cancel</button>
+					<button type="button" class="btn btn-primary" id="save-changes" style="background-color:#828b8f;width: 75px; font-size: 16px; padding-left:9px;">Confirm</button></div>
+
+			</div>
+<!-- 			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="save-changes" style="width: 75px; font-size: 16px;">Confirm</button>
+			</div> -->
+		</div>
+
+	</div>
+</div>
+
+
+	</div>   <!-- container -->
+	<!-- <div class="container"> -->
+	<!--<div class="container-fluid" style="margin-top:5px; margin:0px;">-->
+			<div class="row col-md-12" style="margin: 0px; padding-left: 15px; margin-top:0px;">
+			<div class="col-md-5"></div>
+			<a class="col-md-2" style="background-color: white; padding: 10px;" href="https://www.xxx.uta.edu" target="_blank"><img class="img-responsive" id="uta_logo_1" src="images/xxx_logo.png" alt="XYZ Logo" height="120px" width="150px" style="margin-left: auto; background-color: #FFF;  margin-right:auto; display: block; height: 60px; width:190px;"></a>
+			<!--</div>-->
+			</div>
+
+
+			<div id="myModal2" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header" style="height:50px;font-family:Segoe UI;font-size:15px;">
+							<button type="button" class="close" data-dismiss="modal" style="font-family:Segoe UI;font-size:15px;">close</button>
+							<h4 class="modal-title modalTitle">Alert!</h4>
+						</div>
+						<div class="modal-body">
+							<p name="message" id="message" class="modalMessage" style="text-align:center;font-size:15px;font-family:Segeo UI;"><strong>The system was unable to find any edge between these nodes! Please try adding an edge between a different pair of nodes.</strong></p>
+						</div>
+						<div class="modal-footer" style="margin:10px; padding:5px;">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" style="text-align:center;font-size:15px;font-family:Segeo UI;">Close</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div id="myModalPossibleActions" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content" style="width:700px;opacity:0.9;">
+						<div class="modal-header" style="height:50px;font-family:Segoe UI;font-size:15px;">
+							<button type="button" class="close" data-dismiss="modal" style="font-family:Segoe UI;font-size:15px;">close</button>
+							<h4 class="modal-title modalTitle">Possible Actions</h4>
+						</div>
+						<div class="modal-body">
+						    <img width="670px" id="imgPossibleActions" src="images/case1.PNG"/>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<div id="myModal3" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header" style="height:50px;font-family:Segoe UI;font-size:15px;">
+							<button type="button" class="close" data-dismiss="modal" style="font-family:Segoe UI;font-size:15px;">close</button>
+							<h4 class="modal-title modalTitle">Alert!</h4>
+						</div>
+						<div class="modal-body">
+							<p name="message" id="message" class="modalMessage" style="text-align:center;font-size:16px;font-family:Segoe UI;"><strong>No Candidates!</strong></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" style="text-align:center;font-size:15px;font-family:Segeo UI;">Close</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+			<div id="myModal5" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header" style="height:50px;font-family:Segoe UI;font-size:15px;">
+				<button type="button" class="close" data-dismiss="modal" style="font-family:Segoe UI;font-size:15px;">close</button>
+				<h4 class="modal-title modalTitle">Server Down!</h4>
+			</div>
+			<div class="modal-body">
+				<p name="message" id="message" class="modalMessage" style="text-align:center;font-family:Segoe UI;"><strong>Oops! Orion is currently under maintenance. Please try again later!</strong></p>
+			</div>
+			<div class="modal-footer" style="margin:10px; padding:5px;">
+				<button type="button" class="btn btn-primary" data-dismiss="modal" style="text-align:center;font-family:Segoe UI;font-size:15px;">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+
+		<!-- </div>   -->
+	<!-- </div> -->
+	</body>
+
+
+
+
+<!-- sample initialization -->
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/d3.min.js"></script>
+
+	<script src="js/app1.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+
+<script src="js/mootools-1.2.1-core-yc.js" type="text/javascript" charset="utf-8"></script>
+<!-- required for TextboxList -->
+<script src="js/GrowingInput.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/TextboxList.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/TextboxList.Autocomplete.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/TextboxList.Autocomplete.Binary.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- sample initialization -->
+
+
+	<!--<script src="js/bootstrap-modalmanager.js"></script>
+	<script src="js/bootstrap-modal.js"></script>-->
+<script type="text/javascript">
+function myFunctionForHiding(){
+
+ document.getElementById('tobeHiddenAfterClick').innerHTML = document.getElementById('IntroPart').innerHTML;
+ document.getElementById('initial-read').style.display = "block";
+
+}
+</script>
+<!--
+<script type="text/javascript">
+
+
+
+</script> -->
+
+<script type="text/javascript" charset="utf-8">
+	window.addEvent('load', function(){
+		// Autocomplete with poll the server as you type
+		/*    var t5 = new TextboxList('form_tags_input_4', {unique: true, plugins: {autocomplete: {
+					 minLength: 3,
+				 queryRemote: true,
+					remote: {url: 'https://[server_name]:8080/greeting'}
+				 }}});
+		 t5.add('tag 2');*/
+		 createEntityTextboxList();
+	 });
+ </script>
+		<!-- sample style -->
+	<style type="text/css" media="screen">
+	.form_tags { margin-bottom: 10px; }
+
+	/* Setting widget width examp
+
+	 /* Preloader for autocomplete */
+	.textboxlist-loading { background: url('images/spinner.gif') no-repeat 380px center; }
+
+	 /* Autocomplete results styling */
+	 .form_friends .textboxlist-autocomplete-result { overflow: hidden; zoom: 1; }
+	 .form_friends .textboxlist-autocomplete-result img { float: left; padding-right: 10px; }
+
+	 .note { color: #666; font-size: 90%; }
+	 #footer { margin: 50px; text-align: center; }
+
+
+
+ </style>
+
+
+
+
+
+</html>
