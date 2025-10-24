@@ -117,6 +117,7 @@ nohup ./restart_server.sh &
 ## 🧪 Run Simulated Experiments
 
 ```bash
+cd orion/backend
 ./run_graphTypeQuerySuggestionCompare-freebase-baseline.sh 50 false 5 1 0
 ./run_graphTypeQuerySuggestionCompare-freebase-rdp.sh 50 false 5 1 0
 ./run_graphTypeQuerySuggestionCompare-freebase-hybrid.sh 50 false 5 1 0
