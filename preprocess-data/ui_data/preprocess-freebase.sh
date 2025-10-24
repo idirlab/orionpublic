@@ -7,7 +7,7 @@ PASSWORD=$2
 
 #wget http://commondatastorage.googleapis.com/freebase-public/rdf/freebase-rdf-latest.gz
 #gunzip freebase-rdf-latest.gz
-./parse_triples.sh /xxx-nfs/freebase/freebase-rdf-latest
+./parse_triples.sh freebase-rdf-latest
 
 mysql -u $USERNAME -p$PASSWORD  -e "CREATE DATABASE freebase"
 mysql -u $USERNAME -p$PASSWORD freebase -e "CREATE TABLE freebase(subject VARCHAR(255), predicate VARCHAR(255), object TEXT)"
@@ -290,6 +290,3 @@ mkdir /mounts/[server_name]/data/orion/sourcePropertyTables /mounts/[server_name
 javac CreatePropertyTables.javac
 java CreatePropertyTables /mounts/[server_name]/data/orion/
 
-#manual imputation
-################################
-#in freebase_edgetypes_source_idsorted_edges-clean-nounicode_filtered, manually imputed 47185561 and 47185584 for type 1077

@@ -55,11 +55,6 @@ cd orion/preprocess-data/training_data
 ./create_training_data.sh
 ```
 
-Or, import directly from:
-```
-data/orion/data_all/output/trainingDataFreebase_3_50_700-NOconcat-newProp
-```
-
 ---
 
 ## 🧮 UI Data Generation
@@ -67,11 +62,6 @@ data/orion/data_all/output/trainingDataFreebase_3_50_700-NOconcat-newProp
 ```bash
 cd orion/preprocess-data/ui_data
 ./preprocess-freebase.sh
-```
-
-Or, import from:
-```
-data/orion/data_all/input/freebase/
 ```
 
 ---
