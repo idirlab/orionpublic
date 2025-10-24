@@ -116,13 +116,6 @@ nohup ./restart_server.sh &
 
 ## 🧪 Run Simulated Experiments
 
-Import partial graphs from:
-```
-data/orion/data_all/input/testPartialAndTargetQueryFiles-Freebase/
-```
-
-Then execute:
-
 ```bash
 ./run_graphTypeQuerySuggestionCompare-freebase-baseline.sh 50 false 5 1 0
 ./run_graphTypeQuerySuggestionCompare-freebase-rdp.sh 50 false 5 1 0
